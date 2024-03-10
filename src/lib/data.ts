@@ -1,0 +1,1 @@
+export const MOTION_SLIDE_DEFAULT_DELAY = 0.5
