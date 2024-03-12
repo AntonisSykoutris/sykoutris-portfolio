@@ -1,17 +1,32 @@
 'use client';
 
 import Section from '@/components/General/Section';
-import { useMotionValue, useTransform, motion } from 'framer-motion';
-import { useEffect } from 'react';
+import {
+  useMotionValue,
+  useTransform,
+  motion,
+  useScroll,
+  useMotionTemplate
+} from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 type Props = {};
 
 export default function Hero({}: Props) {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end end']
+  });
+
+  const scale4 = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const x = useMotionValue(0);
   const width = useTransform(
     x,
     value => `${(value / window.innerWidth) * 100}%`
   );
+
+  const compWidth = useMotionTemplate`${scale4}%`;
 
   useEffect(() => {
     const handleMouseMove = (event: { clientX: number }) => {
@@ -32,20 +47,29 @@ export default function Hero({}: Props) {
     };
   }, [x]);
   return (
-    <Section className='hero_section px-0'>
-      <motion.div id='left-side' className='side' style={{ width }}>
-        <h2 className='title'>
-          Sometimes a simple header is
-          <span className='fancy'>better</span>
-        </h2>
-      </motion.div>
-      <div id='right-side' className='side'>
-        <h2 className='title'>
-          Sometimes a simple header is
-          <span className='fancy'>worse</span>
-        </h2>
+    <section ref={container} className=' relative h-[200vh] w-full px-0 pt-0'>
+      <div className='sticky top-0 flex h-screen items-center overflow-hidden bg-blue-500 '>
+        <motion.div
+          id='left-side'
+          className='side absolute  grid h-screen w-full place-items-center overflow-hidden bg-[#030712] text-white'
+          style={{ width: compWidth }}
+        >
+          <h2 className='title'>
+            Sometimes a simple header is
+            <span className=' text-[#a3e635]'>better</span>
+          </h2>
+        </motion.div>
+        <div
+          id='right-side'
+          className='side absolute grid  h-screen w-full place-items-center overflow-hidden bg-[#a3e635]'
+        >
+          <h2 className='title'>
+            Sometimes a simple header is
+            <span className='text-white'>worse</span>
+          </h2>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }
 
