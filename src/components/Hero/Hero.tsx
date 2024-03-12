@@ -21,11 +21,6 @@ export default function Hero({}: Props) {
 
   const scale4 = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const x = useMotionValue(0);
-  const width = useTransform(
-    x,
-    value => `${(value / window.innerWidth) * 100}%`
-  );
-
   const compWidth = useMotionTemplate`${scale4}%`;
 
   useEffect(() => {

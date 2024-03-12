@@ -1,7 +1,9 @@
+import { useMotionValue } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 export default function useMouseMove(initialState = false) {
   const [isMobile, setIsMobile] = useState(initialState);
+  const x = useMotionValue(0);
 
   useEffect(() => {
     const handleMouseMove = (event: { clientX: number }) => {
