@@ -46,21 +46,21 @@ export default function Hero({}: Props) {
       <div className='sticky top-0 flex h-screen items-center overflow-hidden bg-blue-500 '>
         <motion.div
           id='left-side'
-          className='side absolute  grid h-screen w-full place-items-center overflow-hidden bg-[#030712] text-white'
+          className='absolute  grid  h-screen w-full place-items-center  overflow-hidden bg-[#030712] text-white'
           style={{ width: compWidth }}
         >
-          <h2 className='title'>
-            Sometimes a simple header is
-            <span className=' text-[#a3e635]'>better</span>
+          <h2 className='mx-[10vw] my-0 w-[80vw] self-start  text-8xl'>
+            Lets give them a modern touch
+            <span className='text-[#a3e635]'> !</span>
           </h2>
         </motion.div>
         <div
           id='right-side'
-          className='side absolute grid  h-screen w-full place-items-center overflow-hidden bg-[#a3e635]'
+          className='absolute grid  h-screen w-full place-items-center overflow-hidden bg-[#a3e635]'
         >
-          <h2 className='title'>
-            Sometimes a simple header is
-            <span className='text-white'>worse</span>
+          <h2 className='mx-[10vw] my-0 w-[80vw] text-8xl'>
+            Tired of seeing boring layouts
+            <span className='text-white'> ?</span>
           </h2>
         </div>
       </div>

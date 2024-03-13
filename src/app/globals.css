@@ -63,7 +63,6 @@ body {
 }
 
 .side .title {
-  font-family: 'Montserrat', sans-serif;
   font-size: 7vw;
   font-weight: 800;
   margin: 0px 10vw;
@@ -73,4 +72,35 @@ body {
 #left-side {
   width: 60%;
   z-index: 2;
+}
+
+.hoverText {
+  transition:
+    0.35s font-weight,
+    0.35s color;
+}
+
+.hoverText:hover {
+  font-weight: 900;
+  color: rgb(238, 242, 255);
+}
+
+/* To the right */
+.hoverText:hover + .hoverText {
+  font-weight: 500;
+  color: rgb(199, 210, 254);
+}
+
+.hoverText:hover + .hoverText + .hoverText {
+  font-weight: 300;
+}
+
+/* To the left */
+.hoverText:has(+ .hoverText:hover) {
+  font-weight: 500;
+  color: rgb(199, 210, 254);
+}
+
+.hoverText:has(+ .hoverText + .hoverText:hover) {
+  font-weight: 300;
 }

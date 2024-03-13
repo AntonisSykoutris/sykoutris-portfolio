@@ -1,50 +1,48 @@
-import { useMotionValue } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { mouseSpring } from '@/lib/utils';
+import { MotionValue, useSpring } from 'framer-motion';
+import { useEffect, MutableRefObject } from 'react';
 
-export default function useMouseMove(initialState = false) {
-  const [isMobile, setIsMobile] = useState(initialState);
-  const x = useMotionValue(0);
+type MousePosition = {
+  x: MotionValue<number>;
+  y: MotionValue<number>;
+};
 
-  useEffect(() => {
-    const handleMouseMove = (event: { clientX: number }) => {
-      // Update the state based on the current width
-      x.set(event.clientX);
-    };
+export default function useMousePosition(
+  containerRef: MutableRefObject<null>,
+  elementRef: MutableRefObject<null>
+): MousePosition {
+  const mousePosition: MousePosition = {
+    x: useSpring(0, mouseSpring),
+    y: useSpring(0, mouseSpring)
+  };
 
-    const handleTouchMove = (event: { touches: { clientX: number }[] }) => {
-      x.set(event.touches[0].clientX);
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-
-    // document.addEventListener('touchmove', handleTouchMove);
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      // document.removeEventListener('touchmove', handleTouchMove);
-    };
-  }, [x]);
+  const { x, y } = mousePosition;
 
   useEffect(() => {
-    const handleResize = () => {
-      // Update the state based on the current width
-      setIsMobile(window.innerWidth <= 768);
+    const updateMousePosition = (e: MouseEvent) => {
+      if (!containerRef.current || !elementRef.current) return;
+
+      const { clientX, clientY } = e;
+
+      // Assert the type of containerRef.current to HTMLElement
+      const container = containerRef.current as HTMLElement;
+
+      // Assert the type of elementRef.current to HTMLElement
+      const element = elementRef.current as HTMLElement;
+
+      if (!container || !element) return;
+
+      const { left, top } = container.getBoundingClientRect();
+      const { width, height } = element.getBoundingClientRect();
+
+      x.set(clientX - left - width / 2);
+      y.set(clientY - top - height / 2);
     };
 
-    // Initial check on component mount
-    handleResize();
+    window.addEventListener('mousemove', updateMousePosition);
 
-    // Attach the event listener for window resize
-    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('mousemove', updateMousePosition);
+  }, [containerRef, elementRef, x, y]);
 
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []); // Empty dependency array means this effect runs only once
-
-  return isMobile;
+  return mousePosition;
 }
-
-// Usage:
-// const isMobile = useMobileCheck();
