@@ -9,7 +9,7 @@ type MousePosition = {
 
 export default function useMousePosition(
   containerRef: MutableRefObject<null>,
-  elementRef: MutableRefObject<null>
+  elementRef?: MutableRefObject<null> // Make elementRef optional
 ): MousePosition {
   const mousePosition: MousePosition = {
     x: useSpring(0, mouseSpring),
@@ -20,20 +20,20 @@ export default function useMousePosition(
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
-      if (!containerRef.current || !elementRef.current) return;
+      if (!containerRef.current) return;
 
       const { clientX, clientY } = e;
 
-      // Assert the type of containerRef.current to HTMLElement
       const container = containerRef.current as HTMLElement;
+      let element: HTMLElement | null = null;
 
-      // Assert the type of elementRef.current to HTMLElement
-      const element = elementRef.current as HTMLElement;
-
-      if (!container || !element) return;
+      if (elementRef && elementRef.current) {
+        element = elementRef.current as HTMLElement;
+      }
 
       const { left, top } = container.getBoundingClientRect();
-      const { width, height } = element.getBoundingClientRect();
+      const width = element ? element.getBoundingClientRect().width : 0;
+      const height = element ? element.getBoundingClientRect().height : 0;
 
       x.set(clientX - left - width / 2);
       y.set(clientY - top - height / 2);
