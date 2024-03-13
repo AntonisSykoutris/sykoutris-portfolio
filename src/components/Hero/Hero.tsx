@@ -53,7 +53,7 @@ export default function Hero({}: Props) {
           className='absolute  grid  h-screen w-full place-items-center  overflow-hidden bg-[#030712] text-white'
           style={{ width: compWidth }}
         >
-          <h2 className='mx-[10vw] my-0 w-[80vw] self-start  text-8xl'>
+          <h2 className='mx-[10vw] my-0 w-[80vw] self-start text-sm xl:text-8xl'>
             Lets give them a modern touch
             <span className='text-[#a3e635]'> !</span>
           </h2>
@@ -63,7 +63,7 @@ export default function Hero({}: Props) {
           id='right-side'
           className='absolute grid  h-screen w-full place-items-center overflow-hidden bg-[#a3e635]'
         >
-          <h2 className='mx-[10vw] my-0 w-[80vw] self-start text-8xl'>
+          <h2 className='mx-[10vw] my-0 w-[80vw] self-start text-sm xl:text-8xl'>
             Tired of seeing boring layouts
             <span className='text-white'> ?</span>
           </h2>
