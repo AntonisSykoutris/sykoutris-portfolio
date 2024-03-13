@@ -48,7 +48,7 @@ export default function TiltCard() {
         style={{
           transform: 'translateZ(75px)'
         }}
-        className='preserve-3d absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg [&>*]:[transform-style:preserve-3d]'
+        className='preserve-3d absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg'
       >
         <FiMousePointer
           style={{
