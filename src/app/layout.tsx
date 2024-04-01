@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import SmoothScroll from '@/components/General/SmoothScroll';
+import Navbar from '@/components/Navbar/Navbar';
 
 // export const metadata: Metadata = {
 //   openGraph: {
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: Props) {
       />
       <body>
         <SmoothScroll>
+          <Navbar />
           <main className='flex flex-col items-center'>{children}</main>
         </SmoothScroll>
       </body>

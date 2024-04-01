@@ -5,6 +5,8 @@ import TiltCard from '../General/TiltCard';
 import useMouseMove from '@/hooks/useMouseMove';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
+import PlayingCard from './PlayingCard';
 
 type Props = {};
 
@@ -29,6 +31,11 @@ export default function About({}: Props) {
           style={{ x, y }}
         ></motion.div>
       </div> */}
+      <div className='d-flex relative h-full w-full '>
+        {/* <PlayingCard className='absolute left-1/2  -translate-x-1/2 transform  ' />
+        <PlayingCard className='absolute left-1/2  -translate-x-1/2  rotate-6 transform  ' />
+        <PlayingCard className='absolute left-1/2  -translate-x-1/2  -rotate-6 transform  ' /> */}
+      </div>
     </Section>
   );
 }

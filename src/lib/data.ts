@@ -1,5 +1,64 @@
 export const MOTION_SLIDE_DEFAULT_DELAY = 0.5;
 
+export const hamburgerVariants = {
+  top: {
+    open: {
+      rotate: ['0deg', '0deg', '45deg'],
+      top: ['35%', '50%', '50%']
+    },
+    closed: {
+      rotate: ['45deg', '0deg', '0deg'],
+      top: ['50%', '50%', '35%']
+    }
+  },
+  middle: {
+    open: {
+      rotate: ['0deg', '0deg', '-45deg']
+    },
+    closed: {
+      rotate: ['-45deg', '0deg', '0deg']
+    }
+  },
+  bottom: {
+    open: {
+      rotate: ['0deg', '0deg', '45deg'],
+      bottom: ['35%', '50%', '50%'],
+      left: '50%'
+    },
+    closed: {
+      rotate: ['45deg', '0deg', '0deg'],
+      bottom: ['50%', '50%', '35%'],
+      left: 'calc(50% + 10px)'
+    }
+  }
+};
+
+export const navMenuSlide = {
+  initial: { x: 'calc(100% + 100px)' },
+  enter: { x: '0', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
+  exit: {
+    x: 'calc(100% + 100px)',
+    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
+  }
+};
+
+export const navSlide = {
+  initial: { x: 80 },
+  enter: (i: number) => ({
+    x: 0,
+    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.05 * i }
+  }),
+  exit: (i: number) => ({
+    x: 80,
+    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.05 * i }
+  })
+};
+
+export const navMenuScale = {
+  open: { scale: 1, transition: { duration: 0.3 } },
+  closed: { scale: 0, transition: { duration: 0.4 } }
+};
+
 export const heroData = {
   codeBlock1: [
     `1% export% default% function% HeroSection() {%
