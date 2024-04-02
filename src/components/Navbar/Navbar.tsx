@@ -3,11 +3,14 @@
 import { useState } from 'react';
 import { AnimatePresence, MotionConfig, motion } from 'framer-motion';
 import { hamburgerVariants } from '@/lib/data';
+
 import NavMenu from './NavMenu';
 
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
+
   const { top, middle, bottom } = hamburgerVariants;
+
   return (
     <>
       <MotionConfig
@@ -20,7 +23,7 @@ export default function Navbar() {
           initial={false}
           animate={isActive ? 'open' : 'closed'}
           onClick={() => setIsActive(pv => !pv)}
-          className=' md:p-auto fixed right-5 top-5 z-50 h-12 w-12 rounded-full bg-black  p-8  transition-colors hover:bg-black/80 md:h-16 md:w-16'
+          className=' md:p-auto hamburger fixed right-5 top-5 z-50 h-12 w-12 rounded-full bg-black  p-8  transition-colors hover:bg-black/80 md:h-16 md:w-16'
         >
           <motion.span
             variants={top}
