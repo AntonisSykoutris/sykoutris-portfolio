@@ -20,7 +20,7 @@ export default function Navbar() {
           initial={false}
           animate={isActive ? 'open' : 'closed'}
           onClick={() => setIsActive(pv => !pv)}
-          className=' fixed right-5 top-5 z-50 h-20 w-20 rounded-full bg-black transition-colors hover:bg-black/80'
+          className=' md:p-auto fixed right-5 top-5 z-50 h-12 w-12 rounded-full bg-black  p-8  transition-colors hover:bg-black/80 md:h-16 md:w-16'
         >
           <motion.span
             variants={top}
