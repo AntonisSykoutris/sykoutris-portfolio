@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import NavLink from './NavLink';
 import { navMenuSlide } from '@/lib/data';
+import Curve from './Curve';
 
 const navItems = [
   {
@@ -55,7 +56,7 @@ export default function NavMenu() {
         </div>
         {/* <Footer /> */}
       </div>
-      {/* <Curve /> */}
+      <Curve />
     </motion.div>
   );
 }

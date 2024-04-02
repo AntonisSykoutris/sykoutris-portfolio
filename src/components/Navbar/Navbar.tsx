@@ -45,9 +45,7 @@ export default function Navbar() {
         </motion.button>
       </MotionConfig>
 
-      <AnimatePresence mode='wait'>
-        {isActive ? <NavMenu /> : <></>}
-      </AnimatePresence>
+      <AnimatePresence mode='wait'>{isActive && <NavMenu />}</AnimatePresence>
     </>
   );
 }
