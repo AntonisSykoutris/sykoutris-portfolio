@@ -9,19 +9,31 @@ import Curve from './Curve';
 const navItems = [
   {
     title: 'Home',
-    href: '/'
-  },
-  {
-    title: 'Work',
-    href: '/work'
+    href: 'home_section'
   },
   {
     title: 'About',
-    href: '/about'
+    href: 'about_section'
+  },
+  {
+    title: 'Skills',
+    href: 'skills_section'
+  },
+  {
+    title: 'Projects',
+    href: 'projects_section'
+  },
+  {
+    title: 'Experience',
+    href: 'experiance_section'
+  },
+  {
+    title: 'Education',
+    href: 'education_section'
   },
   {
     title: 'Contact',
-    href: '/contact'
+    href: 'contact_section'
   }
 ];
 
@@ -40,11 +52,8 @@ export default function NavMenu() {
       <div className='body flex h-full flex-col justify-between'>
         <div
           onMouseLeave={() => setSelectedIndicator(pathname)}
-          className='mt-20 flex h-screen flex-col justify-between gap-3 p-28 text-5xl'
+          className='mt-20 flex h-screen flex-col justify-between gap-10 p-28 pt-5 text-2xl sm:text-5xl'
         >
-          <div className='header mb-8 border-b border-gray-600 text-xs uppercase text-gray-600'>
-            Navigation
-          </div>
           {navItems.map((data, index) => (
             <NavLink
               key={index}
@@ -54,7 +63,6 @@ export default function NavMenu() {
             />
           ))}
         </div>
-        {/* <Footer /> */}
       </div>
       <Curve />
     </motion.div>

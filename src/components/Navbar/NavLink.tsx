@@ -1,6 +1,7 @@
 'use client';
 
 import { navMenuScale, navMenuSlide } from '@/lib/data';
+import { scrolltoHash } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -30,7 +31,14 @@ function NavLink({ data, isActive, setSelectedIndicator }: Props) {
         animate={isActive ? 'open' : 'closed'}
         className=' absolute -left-8  h-2 w-2  rounded-lg  bg-white'
       ></motion.div>
-      <Link href={href}>{title}</Link>
+      <div
+        className='relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-foreground after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100 '
+        onClick={() => {
+          scrolltoHash(`${href}`);
+        }}
+      >
+        {title}
+      </div>
     </motion.div>
   );
 }
