@@ -59,6 +59,33 @@ export const navMenuScale = {
   closed: { scale: 0, transition: { duration: 0.4 } }
 };
 
+export const navItems = [
+  {
+    title: 'Home',
+    href: 'home_section'
+  },
+  {
+    title: 'About',
+    href: 'about_section'
+  },
+  {
+    title: 'Skills',
+    href: 'skills_section'
+  },
+  {
+    title: 'Projects',
+    href: 'projects_section'
+  },
+  {
+    title: 'Experience',
+    href: 'experiance_section'
+  },
+  {
+    title: 'Contact',
+    href: 'contact_section'
+  }
+];
+
 export const heroData = {
   codeBlock1: [
     `1% export% default% function% HeroSection() {%

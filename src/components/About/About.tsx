@@ -16,7 +16,7 @@ export default function About({}: Props) {
   const { x, y } = useMouseMove(containerRef, elementRef);
 
   return (
-    <Section className='about_section'>
+    <Section id='about_section'>
       <h1 className='text-6xl'>ABOUT SECTION</h1>
       {/* <BubbleText />
 

@@ -46,7 +46,8 @@ export default function Hero({}: Props) {
   return (
     <section
       ref={container}
-      className='home_section relative h-[200vh] w-full px-0 pt-0'
+      id='home_section'
+      className='relative h-[200vh] w-full px-0 pt-0'
     >
       <div className='sticky top-0 flex h-screen items-center overflow-hidden bg-blue-500 '>
         <motion.div

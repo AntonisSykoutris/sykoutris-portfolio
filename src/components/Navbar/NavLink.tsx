@@ -3,15 +3,16 @@
 import { navMenuScale, navMenuSlide } from '@/lib/data';
 import { scrolltoHash } from '@/lib/utils';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { Dispatch, SetStateAction } from 'react';
 
 type Props = {
   data: any;
   isActive: any;
   setSelectedIndicator: any;
+  setIsActive: Dispatch<SetStateAction<boolean>>;
 };
 
-function NavLink({ data, isActive, setSelectedIndicator }: Props) {
+function NavLink({ data, isActive, setIsActive, setSelectedIndicator }: Props) {
   const { title, href, index } = data;
 
   return (
@@ -32,9 +33,10 @@ function NavLink({ data, isActive, setSelectedIndicator }: Props) {
         className=' absolute -left-8  h-2 w-2  rounded-lg  bg-white'
       ></motion.div>
       <div
-        className='relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-foreground after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100 '
+        className='relative select-none after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-foreground after:transition-transform after:duration-300 after:ease-in-out hover:cursor-pointer hover:after:origin-bottom-left hover:after:scale-x-100 '
         onClick={() => {
           scrolltoHash(`${href}`);
+          setIsActive(false);
         }}
       >
         {title}
