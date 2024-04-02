@@ -35,7 +35,7 @@ export default function NavMenu() {
       initial='initial'
       animate='enter'
       exit='exit'
-      className='menu fixed right-0 top-0 z-30 flex h-screen bg-gray-800 text-white'
+      className='menu fixed right-0 top-0 z-30 flex h-screen w-full bg-gray-800 text-white md:w-fit'
     >
       <div className='body flex h-full flex-col justify-between'>
         <div
