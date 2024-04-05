@@ -62,17 +62,17 @@ const Logos = ({
     <div className=' overflow-hidden bg-black'>
       <motion.div
         style={{ y }}
-        className='flex h-full flex-col items-center  justify-center gap-10 p-10 px-4 md:px-8'
+        className='flex h-full flex-col items-center justify-center gap-10 p-10 px-4 md:px-8'
       >
         <div className='flex w-full flex-col items-center justify-between gap-4 border-b border-t py-6 md:flex-row'>
           <FooterNav />
-          <div className='flex justify-center gap-x-5   sm:justify-start'>
+          <div className='flex justify-center gap-x-5 sm:justify-start'>
             <FooterSocial />
           </div>
         </div>
 
         <div className='py-8 text-center text-sm text-foreground'>
-          © {currentYear} - Present Flowrift. All rights reserved.
+          © {currentYear} - Present Sykoutris Antonis. All rights reserved.
         </div>
       </motion.div>
     </div>
