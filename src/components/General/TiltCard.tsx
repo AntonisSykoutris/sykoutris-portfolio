@@ -42,13 +42,13 @@ export default function TiltCard() {
         rotateX,
         rotateY
       }}
-      className=' preserve-3d relative h-96 w-72 rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300'
+      className=' relative h-96 w-72 rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300 preserve-3d'
     >
       <div
         style={{
           transform: 'translateZ(75px)'
         }}
-        className='preserve-3d absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg'
+        className='absolute inset-4 grid place-content-center rounded-xl bg-foreground  shadow-lg  preserve-3d'
       >
         <FiMousePointer
           style={{

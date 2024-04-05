@@ -12,7 +12,12 @@ type TypewriterProps = {
   className?: string;
 };
 
-const Typewriter = ({ textArray, fileName, Icon, className }: TypewriterProps) => {
+const Typewriter = ({
+  textArray,
+  fileName,
+  Icon,
+  className
+}: TypewriterProps) => {
   const [currentText, setCurrentText] = useState('');
   const [textIndex, setTextIndex] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -49,7 +54,7 @@ const Typewriter = ({ textArray, fileName, Icon, className }: TypewriterProps) =
 
   // Apply inline styling to highlight "function"
   const styledText = (
-    <pre className='relative font-mono text-xs text-white 2xl:text-base '>
+    <pre className='relative font-mono text-xs  text-foreground  2xl:text-base '>
       {currentText
         .split('%')
         .map((segment, index) => {
@@ -86,9 +91,16 @@ const Typewriter = ({ textArray, fileName, Icon, className }: TypewriterProps) =
             'true',
             'false',
             'null',
-            'undefined',
+            'undefined'
           ];
-          const typeProperties = ['name', 'surname', 'age', 'profession', 'hobbies', 'loves'];
+          const typeProperties = [
+            'name',
+            'surname',
+            'age',
+            'profession',
+            'hobbies',
+            'loves'
+          ];
           if (
             keywords.includes(token) ||
             token === 'return (' ||
@@ -139,7 +151,7 @@ const Typewriter = ({ textArray, fileName, Icon, className }: TypewriterProps) =
         })
         .filter(segment => segment !== null)}
       <motion.span
-        className='cursor inline-block text-white'
+        className='cursor inline-block  text-foreground '
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 1, repeat: Infinity }}
@@ -150,7 +162,12 @@ const Typewriter = ({ textArray, fileName, Icon, className }: TypewriterProps) =
   );
 
   return (
-    <div className={twMerge('h-40 w-[20rem] rounded-lg bg-gray-900 shadow-2xl 2xl:h-60 2xl:w-[27rem]', className)}>
+    <div
+      className={twMerge(
+        'h-40 w-[20rem] rounded-lg bg-gray-900 shadow-2xl 2xl:h-60 2xl:w-[27rem]',
+        className
+      )}
+    >
       <div className='flex w-full items-center justify-between rounded-t-lg bg-gray-800'>
         <div className=' flex items-center justify-between gap-3 rounded bg-[#1d1641] p-1 text-xs text-[#3e7eca] 2xl:text-base'>
           <Icon className='h-4 w-4 2xl:h-5 2xl:w-5' fill='#0288d1' />

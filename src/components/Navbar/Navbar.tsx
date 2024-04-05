@@ -27,17 +27,17 @@ export default function Navbar() {
         >
           <motion.span
             variants={top}
-            className='hamburger absolute h-1 w-10 bg-white'
+            className='hamburger absolute h-1 w-10  bg-foreground '
             style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }}
           />
           <motion.span
             variants={middle}
-            className='hamburger absolute h-1 w-10 bg-white'
+            className='hamburger absolute h-1 w-10  bg-foreground '
             style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }}
           />
           <motion.span
             variants={bottom}
-            className='hamburger absolute h-1 w-5 bg-white'
+            className='hamburger absolute h-1 w-5  bg-foreground '
             style={{
               x: '-50%',
               y: '50%',

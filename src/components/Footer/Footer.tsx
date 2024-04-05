@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { LuInstagram } from 'react-icons/lu';
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion';
+import FooterSocial from './FooterSocial';
+import FooterNav from './FooterNav';
 
 export default function Footer() {
   const container = useRef(null);
   const paths = useRef<(SVGTextPathElement | null)[]>([]); // Make ref nullable
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start end', 'end end']
@@ -18,7 +20,7 @@ export default function Footer() {
         if (path) path.setAttribute('startOffset', -40 + i * 40 + e * 40 + '%');
       });
     });
-  }, []);
+  }, [scrollYProgress]);
 
   return (
     <div ref={container}>
@@ -53,23 +55,25 @@ const Logos = ({
 }: {
   scrollYProgress: MotionValue<number>;
 }) => {
-  const y = useTransform(scrollYProgress, [0, 1], [-700, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [-350, 0]);
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div className='h-[250px] overflow-hidden bg-black'>
+    <div className=' overflow-hidden bg-black'>
       <motion.div
         style={{ y }}
-        className='flex h-full items-center justify-center gap-10 bg-black p-10'
+        className='flex h-full flex-col items-center  justify-center gap-10 p-10 px-4 md:px-8'
       >
-        {[...Array(5)].map((_, i) => {
-          return (
-            // <img
-            //   key={`img_${i}`}
-            //
-            //   src={`/medias/${i + 1}.jpg`}
-            // />
-            <LuInstagram key={`img_${i}`} className=' h-20 w-20  text-white ' />
-          );
-        })}
+        <div className='flex w-full flex-col items-center justify-between gap-4 border-b border-t py-6 md:flex-row'>
+          <FooterNav />
+          <div className='flex justify-center gap-x-5   sm:justify-start'>
+            <FooterSocial />
+          </div>
+        </div>
+
+        <div className='py-8 text-center text-sm text-foreground'>
+          © {currentYear} - Present Flowrift. All rights reserved.
+        </div>
       </motion.div>
     </div>
   );

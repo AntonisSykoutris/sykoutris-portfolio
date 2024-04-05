@@ -52,7 +52,7 @@ export default function Hero({}: Props) {
       <div className='sticky top-0 flex h-screen items-center overflow-hidden bg-blue-500 '>
         <motion.div
           id='left-side'
-          className='absolute  grid  h-screen w-full place-items-center  overflow-hidden bg-[#030712] text-white'
+          className='absolute  grid  h-screen w-full place-items-center  overflow-hidden bg-[#030712]  text-foreground '
           style={{ width: compWidth }}
         >
           <h2 className='mx-[10vw] my-0 w-[80vw] self-start pt-5 text-center text-xl  md:text-4xl xl:text-8xl'>
@@ -67,7 +67,7 @@ export default function Hero({}: Props) {
         >
           <h2 className='mx-[10vw] my-0 w-[80vw] self-start justify-self-center  text-xl  md:text-4xl xl:text-8xl'>
             Tired of seeing boring layouts
-            <span className='text-white'> ?</span>
+            <span className=' text-foreground '> ?</span>
           </h2>
           {/* <motion.div className=' preserve-3d relative h-96 w-72 rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300'></motion.div> */}
           <div className=' text-start'>
