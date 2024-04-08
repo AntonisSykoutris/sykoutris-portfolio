@@ -23,7 +23,11 @@ export default function Footer() {
   }, [scrollYProgress]);
 
   return (
-    <div ref={container}>
+    <section
+      className=' mx-auto flex h-[200svh] w-screen
+    flex-col items-start justify-end'
+      ref={container}
+    >
       <svg className='mb-40 w-full' viewBox='0 0 250 90'>
         <path
           fill='none'
@@ -46,7 +50,7 @@ export default function Footer() {
         </text>
       </svg>
       <Logos scrollYProgress={scrollYProgress} />
-    </div>
+    </section>
   );
 }
 
@@ -59,7 +63,7 @@ const Logos = ({
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className=' overflow-hidden bg-black'>
+    <div className=' w-full overflow-hidden bg-black' id='contact_section'>
       <motion.div
         style={{ y }}
         className='flex h-full flex-col items-center justify-center gap-10 p-10 px-4 md:px-8'
