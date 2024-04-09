@@ -21,7 +21,7 @@ export default function About({}: Props) {
   });
 
   // when scroll progress reached 1, path length becomes 0.
-  const pathLengthValue = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const pathLengthValue = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   const PATH =
     'M80.9993 0C80.9993 80.1667 17.4993 205.5 80.9993 241C144.499 276.5 396 165.5 457.5 241C519 316.5 601.5 443 457.5 509C313.5 575 80.9993 509 80.9993 509C80.9993 509 -98.0006 898.5 80.9993 914';
