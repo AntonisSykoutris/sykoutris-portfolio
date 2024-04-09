@@ -23,7 +23,8 @@ export default function About({}: Props) {
   // when scroll progress reached 1, path length becomes 0.
   const pathLengthValue = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-  const PATH = 'M0.5 0.980671L0.5 1566.02';
+  const PATH =
+    'M80.9993 0C80.9993 80.1667 17.4993 205.5 80.9993 241C144.499 276.5 396 165.5 457.5 241C519 316.5 601.5 443 457.5 509C313.5 575 80.9993 509 80.9993 509C80.9993 509 -98.0006 898.5 80.9993 914';
 
   return (
     <div
@@ -31,9 +32,9 @@ export default function About({}: Props) {
       ref={ref}
     >
       <svg
-        width='100'
-        height='1567'
-        viewBox='0 0 1 1567'
+        width='100%'
+        height='100%'
+        viewBox='0 0 538 915'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
         className='flex-shrink-0'
@@ -42,10 +43,10 @@ export default function About({}: Props) {
         <defs>
           <linearGradient
             id='paint0_linear_207_38'
-            x1='1'
-            y1='-102.823'
+            x1='0'
+            y1='0'
             x2='1'
-            y2='1566.02'
+            y2='0'
             gradientUnits='userSpaceOnUse'
           >
             <stop stop-color='#3879E7' stop-opacity='0' />
