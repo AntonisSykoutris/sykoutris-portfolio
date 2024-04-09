@@ -17,7 +17,7 @@ export default function About({}: Props) {
   // Track scroll progress, lies between 0 and 1.
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['end end', 'start start']
+    offset: ['start end', 'end end']
   });
 
   // when scroll progress reached 1, path length becomes 0.
