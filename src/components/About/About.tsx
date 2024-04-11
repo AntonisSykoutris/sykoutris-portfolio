@@ -13,7 +13,7 @@ export default function About({}: Props) {
   // Track scroll progress, lies between 0 and 1.
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'center 60%']
+    offset: ['50% end', 'center 50%']
   });
 
   // when scroll progress reached 1, path length becomes 0.
@@ -21,7 +21,8 @@ export default function About({}: Props) {
 
   return (
     <div
-      className='mx-auto flex w-full max-w-4xl flex-row items-start justify-center space-x-10 '
+      className=' mx-auto flex h-screen w-screen
+      flex-col items-start justify-center p-8'
       ref={ref}
     >
       <HeartSvg pathLengthValue={pathLengthValue} />
