@@ -1,11 +1,15 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { MotionValue, motion, useSpring } from 'framer-motion';
 import React from 'react';
 
-type Props = {};
+type Props = {
+  color?: string;
+  path?: string;
+  pathLengthValue: MotionValue<number>;
+};
 
-export default function HeartSvg({}: Props) {
+export default function HeartSvg({ pathLengthValue }: Props) {
   const LEFT_PATH =
     'M5 667.104H606.82C609.614 667.104 610.992 663.685 608.874 661.864C568.131 626.846 335.36 424.081 250 290.104C156.304 143.043 362.724 -137.553 615 92.1042';
   const RIGHT_PATH =
@@ -13,13 +17,30 @@ export default function HeartSvg({}: Props) {
 
   return (
     <motion.svg
-      width='1230'
-      height='673'
+      width='100%'
+      height='100%'
       viewBox='0 0 1230 673'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <path d={LEFT_PATH} stroke='url(#paint0_linear_207_38)' />
+      <SvgPart
+        path={LEFT_PATH}
+        pathLengthValue={pathLengthValue}
+        color={'blue'}
+      />
+      <SvgPart
+        path={RIGHT_PATH}
+        pathLengthValue={pathLengthValue}
+        color={'red'}
+      />
+    </motion.svg>
+  );
+}
+
+const SvgPart = ({ path, pathLengthValue, color }: Props) => {
+  return (
+    <>
+      <path d={path} stroke='url(#paint0_linear_207_38)' />
       <defs>
         <linearGradient
           id='paint0_linear_207_38'
@@ -33,19 +54,20 @@ export default function HeartSvg({}: Props) {
           <stop offset='1' stop-color='#3879E7' />
         </linearGradient>
       </defs>
-      <motion.path
-        d={LEFT_PATH}
-        stroke='blue'
-        stroke-width='10'
-        stroke-linecap='round'
-      />
 
       <motion.path
-        d={RIGHT_PATH}
-        stroke='red'
-        stroke-width='10'
-        stroke-linecap='round'
+        style={{
+          pathLength: useSpring(pathLengthValue, {
+            stiffness: 500,
+            damping: 100
+          })
+        }}
+        transition={{ duration: 14, ease: 'easeInOut' }}
+        d={path}
+        stroke={color}
+        strokeWidth='10'
+        strokeLinecap='round'
       />
-    </motion.svg>
+    </>
   );
-}
+};
