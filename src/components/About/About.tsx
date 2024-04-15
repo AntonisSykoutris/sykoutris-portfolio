@@ -21,8 +21,8 @@ export default function About({}: Props) {
 
   return (
     <div
-      className=' mx-auto flex h-screen w-screen
-      flex-col items-start justify-center p-8'
+      className=' mx-auto flex h-screen w-screen flex-col
+      items-start justify-center overflow-x-hidden p-8'
       ref={ref}
     >
       <HeartSvg pathLengthValue={pathLengthValue} />
