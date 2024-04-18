@@ -10,6 +10,8 @@
 body {
   font-family: 'Main';
   /* background-color: rgb(254, 242, 242); */
+  /* background-color: black; */
+  /* background-color: #0e0c15; */
   overflow-x: hidden !important;
 }
 
@@ -108,3 +110,18 @@ body {
 .hoverText:has(+ .hoverText + .hoverText:hover) {
   font-weight: 300;
 }
+
+/* .testBorder {
+  animation: rotate 20s linear infinite;
+}
+
+.testBorder::before {
+  border: 3px dashed #8216b8;
+  z-index: 40;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+} */

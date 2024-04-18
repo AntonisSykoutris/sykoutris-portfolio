@@ -4,6 +4,7 @@ import { MotionConfig } from 'framer-motion';
 import { framerMotionConfig } from '@/lib/utils';
 import Hero from '@/components/Hero/Hero';
 import About from '@/components/About/About';
+import Skills from '@/components/Skills/Skills';
 
 export default function Home() {
   return (
@@ -12,8 +13,9 @@ export default function Home() {
         ...framerMotionConfig
       }}
     >
-      <Hero />
-      <About />
+      {/* <Hero /> */}
+      {/* <About /> */}
+      <Skills />
     </MotionConfig>
   );
 }

@@ -37,7 +37,7 @@ export default function RootLayout({ children }: Props) {
         <SmoothScroll>
           <Navbar />
           <main className='flex flex-col items-center'>{children}</main>
-          <Footer />
+          {/* <Footer /> */}
         </SmoothScroll>
       </body>
     </html>
