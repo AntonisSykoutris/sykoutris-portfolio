@@ -42,8 +42,8 @@ function Section({
     <motion.section
       className={cn(
         `
-      mx-auto flex h-screen w-screen
-      flex-col items-start justify-center p-8
+      mx-auto flex h-screen w-[85svw]
+     flex-col items-start justify-center
       `,
         className
       )}
@@ -52,7 +52,7 @@ function Section({
       whileInView={'animate'}
       id={id}
     >
-      <motion.div className='relative h-full w-full p-8 opacity-50 lg:border lg:border-dashed lg:border-black'>
+      <motion.div className='relative h-full w-full  !border-t-0 p-8 opacity-50 lg:border lg:border-dashed  lg:border-black'>
         {showTopLeftIcon && (
           <LuPlus
             className={` pointer-events-none absolute inset-0 z-2 hidden h-5 w-5  -translate-x-1/2 -translate-y-1/2 lg:block`}
