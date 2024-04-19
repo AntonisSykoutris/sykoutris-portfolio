@@ -9,7 +9,7 @@ import {
   useMotionTemplate
 } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import TiltCard from '../General/TiltCard';
+import TiltCard from '../Ideas/TiltCard';
 import Typewriter from '../CodeBlock/Typewriter';
 
 type Props = {};

@@ -19,21 +19,6 @@ function Section({
   leftTopCross = false,
   rightTopCross = false
 }: Props) {
-  const SectionVariants = {
-    initial: {
-      opacity: 0,
-      y: 50
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.6
-      }
-    }
-  };
-
   return (
     <motion.section
       className={cn(
@@ -43,28 +28,26 @@ function Section({
       `,
         className
       )}
-      variants={SectionVariants}
-      initial={'initial'}
-      whileInView={'animate'}
       id={id}
     >
-      <motion.div className='relative h-full w-full px-8 py-10 opacity-50 lg:py-14 '>
-        {leftTopCross ? (
-          <div className='absolute left-[-1px] top-[-1px] h-3.5 w-3.5 rotate-0 border-l border-t border-black'></div>
-        ) : (
-          <></>
-        )}
-
-        {rightTopCross ? (
-          <div className='absolute right-[-1px] top-[-1px] h-3.5 w-3.5 rotate-90 border-l  border-t border-black'></div>
-        ) : (
-          <></>
-        )}
-
-        <div className='absolute bottom-[-1px] left-[-1px] h-3.5 w-3.5 -rotate-90 border-l border-t border-black'></div>
-        <div className='absolute bottom-[-1px] right-[-1px] h-3.5 w-3.5 rotate-180 border-l border-t border-black'></div>
+      <motion.div className='relative h-full w-full px-8 py-10 lg:py-14 '>
         {children}
       </motion.div>
+
+      {leftTopCross ? (
+        <div className='absolute left-[-1px] top-[-1px] h-3.5 w-3.5 rotate-0 border-l border-t border-black'></div>
+      ) : (
+        <></>
+      )}
+
+      {rightTopCross ? (
+        <div className='absolute right-[-1px] top-[-1px] h-3.5 w-3.5 rotate-90 border-l  border-t border-black'></div>
+      ) : (
+        <></>
+      )}
+
+      <div className='absolute bottom-[-1px] left-[-1px] h-3.5 w-3.5 -rotate-90 border-l border-t border-black'></div>
+      <div className='absolute bottom-[-1px] right-[-1px] h-3.5 w-3.5 rotate-180 border-l border-t border-black'></div>
     </motion.section>
   );
 }

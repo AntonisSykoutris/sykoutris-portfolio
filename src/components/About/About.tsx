@@ -3,7 +3,7 @@
 import useMouseMove from '@/hooks/useMouseMove';
 import { useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import HeartSvg from '../General/HeartSvg';
+import HeartSvg from '../Ideas/HeartSvg';
 
 type Props = {};
 
