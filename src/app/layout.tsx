@@ -39,7 +39,7 @@ export default function RootLayout({ children }: Props) {
           <main className='  mx-auto flex w-[60svw] flex-col items-center    '>
             {children}
           </main>
-          {/* <Footer /> */}
+          <Footer />
         </SmoothScroll>
       </body>
     </html>
