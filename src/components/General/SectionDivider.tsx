@@ -1,11 +1,14 @@
+import { cn } from '@/lib/utils';
 import React from 'react';
 
-const SectionDivider: React.FC = () => {
-  return (
-    <div className='section-divider'>
-      <div className='divider-line text-black '></div>
-    </div>
-  );
+type Props = {
+  className?: string;
 };
 
-export default SectionDivider;
+export default function SectionDivider({ className }: Props) {
+  return (
+    <div className={cn('section-divider', className)}>
+      <div className='divider-line  '></div>
+    </div>
+  );
+}

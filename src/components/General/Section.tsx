@@ -8,20 +8,16 @@ type Props = {
   children: ReactNode;
   id?: string;
   className?: string;
-  showTopLeftIcon?: boolean;
-  showBottomLeftIcon?: boolean;
-  showTopRightIcon?: boolean;
-  showBottomRightIcon?: boolean;
+  leftTopCross?: boolean;
+  rightTopCross?: boolean;
 };
 
 function Section({
   children,
   id,
   className,
-  showTopLeftIcon = true,
-  showBottomLeftIcon = true,
-  showTopRightIcon = true,
-  showBottomRightIcon = true
+  leftTopCross = false,
+  rightTopCross = false
 }: Props) {
   const SectionVariants = {
     initial: {
@@ -42,8 +38,8 @@ function Section({
     <motion.section
       className={cn(
         `
-      mx-auto flex h-screen w-[85svw]
-     flex-col items-start justify-center
+      mx-auto flex h-screen w-full flex-col items-start
+     justify-center border border-b-0 border-t-0 border-[#e6e6e6]
       `,
         className
       )}
@@ -52,31 +48,21 @@ function Section({
       whileInView={'animate'}
       id={id}
     >
-      <motion.div className='relative h-full w-full  !border-t-0 p-8 opacity-50 lg:border lg:border-dashed  lg:border-black'>
-        {showTopLeftIcon && (
-          <LuPlus
-            className={` pointer-events-none absolute inset-0 z-2 hidden h-5 w-5  -translate-x-1/2 -translate-y-1/2 lg:block`}
-          />
+      <motion.div className='relative h-full w-full px-8 py-10 opacity-50 lg:py-14 '>
+        {leftTopCross ? (
+          <div className='absolute left-[-1px] top-[-1px] h-3.5 w-3.5 rotate-0 border-l border-t border-black'></div>
+        ) : (
+          <></>
         )}
 
-        {showBottomLeftIcon && (
-          <LuPlus
-            className={` pointer-events-none absolute bottom-0 left-0 z-2 hidden h-5 w-5  -translate-x-1/2 translate-y-1/2 lg:block`}
-          />
+        {rightTopCross ? (
+          <div className='absolute right-[-1px] top-[-1px] h-3.5 w-3.5 rotate-90 border-l  border-t border-black'></div>
+        ) : (
+          <></>
         )}
 
-        {showTopRightIcon && (
-          <LuPlus
-            className={` pointer-events-none absolute right-0 top-0 z-2 hidden h-5 w-5  -translate-y-1/2 translate-x-1/2 lg:block`}
-          />
-        )}
-
-        {showBottomRightIcon && (
-          <LuPlus
-            className={` pointer-events-none absolute bottom-0 right-0 z-2 hidden h-5 w-5  translate-x-1/2 translate-y-1/2 lg:block`}
-          />
-        )}
-
+        <div className='absolute bottom-[-1px] left-[-1px] h-3.5 w-3.5 -rotate-90 border-l border-t border-black'></div>
+        <div className='absolute bottom-[-1px] right-[-1px] h-3.5 w-3.5 rotate-180 border-l border-t border-black'></div>
         {children}
       </motion.div>
     </motion.section>

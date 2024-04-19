@@ -16,7 +16,9 @@ export default function Home() {
     >
       {/* <Hero /> */}
       {/* <About /> */}
-      <SectionDivider />
+      <SectionDivider className='mt-5' />
+      <Skills />
+      <SectionDivider className='' />
       <Skills />
     </MotionConfig>
   );

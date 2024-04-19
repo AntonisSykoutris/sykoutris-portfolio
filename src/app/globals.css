@@ -114,15 +114,16 @@ body {
 .divider-line {
   position: relative;
   height: 1px;
-  width: calc(100% + 50svw * 2);
-  transform: translateX(calc(50svw * -1)) translateY(-1px);
+  width: calc(100% + 35svw * 2);
+  transform: translateX(calc(35svw * -1));
   background: repeating-linear-gradient(
     90deg,
-    green,
-    green 4px,
+    #666666,
+    #666666 4px,
     transparent 6px,
     transparent 10px
   );
+  z-index: 1;
 }
 
 .divider-line::before,
@@ -131,6 +132,7 @@ body {
   content: '';
   height: 100%;
   width: 35%;
+  z-index: 1;
 }
 
 .divider-line::before {
@@ -146,10 +148,5 @@ body {
 .section-divider {
   position: relative;
   height: 1px;
-  padding-top: 100px;
-}
-
-.testt {
-  border-left: 1px solid white !important;
-  border-right: 1px solid white !important;
+  /* padding-top: 100px; */
 }
