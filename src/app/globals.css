@@ -125,3 +125,43 @@ body {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 } */
+
+.section-divider {
+  position: relative;
+  height: 3px;
+  width: 100vw;
+}
+
+.divider-line {
+  position: absolute;
+  inset: 0;
+  content: '';
+  height: 3px;
+  width: 200px;
+  color: red;
+}
+
+.divider-line::before {
+  left: 0;
+  background: linear-gradient(90deg, black 0, transparent 100%);
+}
+
+.divider-line::after {
+  right: 0;
+  background: linear-gradient(90deg, transparent 0, black 100%);
+}
+
+.section-divider {
+  width: calc(100% + 200px * 2);
+  transform: translateX(calc(200px * -1));
+}
+
+.divider-line {
+  background: repeating-linear-gradient(
+    90deg,
+    red,
+    red 4px,
+    transparent 4px,
+    transparent 10px
+  );
+}
