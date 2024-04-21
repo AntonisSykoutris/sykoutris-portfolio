@@ -7,7 +7,7 @@ type Props = {
 
 export default function SectionDivider({ className }: Props) {
   return (
-    <div className={cn('section-divider overflow-x-hidden', className)}>
+    <div className={cn('section-divider ', className)}>
       <div className='divider-line  '></div>
     </div>
   );

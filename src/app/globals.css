@@ -126,6 +126,16 @@ body {
   z-index: 1;
 }
 
+/* Media query for small devices */
+@media (max-width: 768px) {
+  /* Adjust the max-width to your desired breakpoint */
+  .divider-line {
+    width: calc(100% + 47vw * 2);
+    width: calc(100% + 47vw * 2);
+    transform: translateX(calc(47vw * -1));
+  }
+}
+
 .divider-line::before,
 .divider-line::after {
   position: absolute;
