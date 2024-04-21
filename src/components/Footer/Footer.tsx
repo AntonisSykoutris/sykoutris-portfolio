@@ -24,7 +24,7 @@ export default function Footer() {
 
   return (
     <section
-      className=' mx-auto flex h-svh w-screen
+      className=' mx-auto flex h-svh w-full
     flex-col items-start justify-end'
       ref={container}
     >
