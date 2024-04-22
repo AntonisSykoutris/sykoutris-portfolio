@@ -24,7 +24,7 @@ function Section({
       className={cn(
         `
       mx-auto flex h-screen w-full flex-col items-start
-     justify-center overflow-x-clip border border-b-0 border-t-0 border-[#e6e6e6]
+     justify-center border border-b-0 border-t-0 border-[#e6e6e6]
       `,
         className
       )}
