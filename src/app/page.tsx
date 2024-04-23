@@ -18,8 +18,8 @@ export default function Home() {
       {/* <About /> */}
       <SectionDivider className='mt-5' />
       <Skills />
-      <SectionDivider className='' />
-      <Skills />
+      {/* <SectionDivider className='' /> */}
+      {/* <Skills /> */}
     </MotionConfig>
   );
 }
