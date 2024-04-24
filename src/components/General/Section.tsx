@@ -8,6 +8,7 @@ type Props = {
   children: ReactNode;
   id?: string;
   className?: string;
+  customPaddings?: string;
   leftTopCross?: boolean;
   rightTopCross?: boolean;
 };
@@ -16,6 +17,7 @@ function Section({
   children,
   id,
   className,
+  customPaddings,
   leftTopCross = false,
   rightTopCross = false
 }: Props) {
@@ -30,7 +32,12 @@ function Section({
       )}
       id={id}
     >
-      <motion.div className='relative h-full w-full px-8 py-10 lg:py-14 '>
+      <motion.div
+        className={cn(
+          'relative h-full w-full px-8 py-10 lg:py-14 ',
+          customPaddings
+        )}
+      >
         {children}
       </motion.div>
 
