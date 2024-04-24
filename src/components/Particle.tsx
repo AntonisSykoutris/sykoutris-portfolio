@@ -33,6 +33,14 @@ export default function ParticleComp({}: Props) {
 
     const image1 = imgRef.current;
 
+    const addParticle = (particle: Particle) => {
+      particle.update = () => {
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+      };
+      particles.push(particle);
+    };
+
     function drawParticle(x: number, y: number, size: number, color: string) {
       if (!ctx) return;
 
@@ -48,15 +56,7 @@ export default function ParticleComp({}: Props) {
       );
     }
 
-    const addParticle = (particle: Particle) => {
-      particle.update = () => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-      };
-      particles.push(particle);
-    };
-
-    function drawEffect(particles: any[]) {
+    function initEffect(particles: any[]) {
       drawImage(image1);
       const pixels = ctx?.getImageData(0, 0, canvas.width, canvas.height).data;
       if (pixels) {
@@ -89,19 +89,22 @@ export default function ParticleComp({}: Props) {
       }
     }
 
+    function drawEffect() {
+      particles.forEach(particle =>
+        drawParticle(particle.x, particle.y, particle.size, particle.color)
+      );
+    }
+
     function updateEffect(particles: any[]) {
       particles.forEach(particle => particle.update());
     }
 
-    // console.log(particles);
-
-    drawEffect(particles);
+    initEffect(particles);
 
     function animate() {
       ctx?.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(particle =>
-        drawParticle(particle.x, particle.y, particle.size, particle.color)
-      );
+      drawEffect();
+
       updateEffect(particles);
       animationRef.current = requestAnimationFrame(animate);
     }
