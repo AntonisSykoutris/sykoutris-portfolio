@@ -12,6 +12,7 @@ interface Particle {
   color: string;
   vx: number;
   vy: number;
+  ease: number;
   update: () => void;
 }
 
@@ -35,8 +36,8 @@ export default function ParticleComp({}: Props) {
 
     const addParticle = (particle: Particle) => {
       particle.update = () => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
+        particle.x += (particle.originX - particle.x) * particle.ease;
+        particle.y += (particle.originY - particle.y) * particle.ease;
       };
       particles.push(particle);
     };
@@ -71,14 +72,15 @@ export default function ParticleComp({}: Props) {
 
             if (alpha > 0) {
               addParticle({
-                x: x,
+                x: Math.random() * canvas?.width,
                 y: y,
-                originX: x,
-                originY: y,
+                originX: Math.floor(x),
+                originY: Math.floor(y),
                 color: color,
                 size: 5,
                 vx: 0,
                 vy: 0,
+                ease: 0.03,
                 update: () => {
                   // Placeholder for the update function
                 }
