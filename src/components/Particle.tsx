@@ -13,6 +13,11 @@ interface Particle {
   vx: number;
   vy: number;
   ease: number;
+  mouse: {
+    radius: number;
+    x: number;
+    y: number;
+  };
   update: () => void;
 }
 
@@ -20,7 +25,7 @@ export default function ParticleComp({}: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
   const animationRef = useRef<number | null>(null); // Ref to store animation frame ID
-  const PIXEL_GAP = 5;
+  const PIXEL_GAP = 4;
 
   useEffect(() => {
     if (!canvasRef?.current || !imgRef?.current) return;
@@ -39,6 +44,7 @@ export default function ParticleComp({}: Props) {
         particle.x += (particle.originX - particle.x) * particle.ease;
         particle.y += (particle.originY - particle.y) * particle.ease;
       };
+
       particles.push(particle);
     };
 
@@ -77,10 +83,15 @@ export default function ParticleComp({}: Props) {
                 originX: Math.floor(x),
                 originY: Math.floor(y),
                 color: color,
-                size: 5,
+                size: 4,
                 vx: 0,
                 vy: 0,
-                ease: 0.03,
+                ease: 0.01,
+                mouse: {
+                  radius: 3000,
+                  x: 0,
+                  y: 0
+                },
                 update: () => {
                   // Placeholder for the update function
                 }
@@ -108,10 +119,28 @@ export default function ParticleComp({}: Props) {
       drawEffect();
 
       updateEffect(particles);
+
       animationRef.current = requestAnimationFrame(animate);
     }
 
     animate();
+
+    // Mouse move event handler
+    const handleMouseMove = (event: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = event.clientX - rect.left;
+      const mouseY = event.clientY - rect.top;
+
+      console.log(`Mouse X: ${mouseX}, Mouse Y: ${mouseY}`);
+    };
+
+    canvas.addEventListener('mousemove', handleMouseMove);
+
+    // Cleanup
+    return () => {
+      canvas.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(animationRef.current!);
+    };
   }, []);
 
   return (
