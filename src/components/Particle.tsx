@@ -12,12 +12,19 @@ interface Particle {
   color: string;
   vx: number;
   vy: number;
+  dx: number;
+  dy: number;
+  distance: number;
+  force: number;
+  angle: number;
+  friction: number;
   ease: number;
   mouse: {
     radius: number;
     x: number;
     y: number;
   };
+  mousePosition: () => void;
   update: () => void;
 }
 
@@ -40,9 +47,33 @@ export default function ParticleComp({}: Props) {
     const image1 = imgRef.current;
 
     const addParticle = (particle: Particle) => {
+      // particle.mousePosition = () => {
+      //   window.addEventListener('mousemove', event => {
+      //     particle.mouse.x = event.x;
+      //     particle.mouse.y = event.y;
+      //     console.log(particle.mouse.x, particle.mouse.y);
+      //   });
+      // };
       particle.update = () => {
-        particle.x += (particle.originX - particle.x) * particle.ease;
-        particle.y += (particle.originY - particle.y) * particle.ease;
+        particle.dx = particle.mouse.x - particle.x;
+        particle.dy = particle.mouse.y - particle.y;
+        particle.distance =
+          particle.dx * particle.dx + particle.dy * particle.dy;
+        particle.force = -particle.mouse.radius / particle.distance;
+
+        if (particle.distance < particle.mouse.radius) {
+          particle.angle = Math.atan2(particle.dy, particle.dx);
+          particle.vx += particle.force * Math.cos(particle.angle);
+          particle.vy += particle.force * Math.sin(particle.angle);
+        }
+
+        particle.x +=
+          (particle.vx *= particle.friction) +
+          (particle.originX - particle.x) * particle.ease;
+
+        particle.y +=
+          (particle.vy *= particle.friction) +
+          (particle.originY - particle.y) * particle.ease;
       };
 
       particles.push(particle);
@@ -86,12 +117,19 @@ export default function ParticleComp({}: Props) {
                 size: 4,
                 vx: 0,
                 vy: 0,
+                dx: 0,
+                dy: 0,
+                distance: 0,
+                force: 0,
+                angle: 0,
+                friction: 0.98,
                 ease: 0.01,
                 mouse: {
                   radius: 3000,
                   x: 0,
                   y: 0
                 },
+                mousePosition: () => {},
                 update: () => {
                   // Placeholder for the update function
                 }
@@ -125,13 +163,16 @@ export default function ParticleComp({}: Props) {
 
     animate();
 
-    // Mouse move event handler
+    // // Mouse move event handler
     const handleMouseMove = (event: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
-      const mouseX = event.clientX - rect.left;
-      const mouseY = event.clientY - rect.top;
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
 
-      console.log(`Mouse X: ${mouseX}, Mouse Y: ${mouseY}`);
+      particles.forEach(particle => {
+        particle.mouse.x = mouseX;
+        particle.mouse.y = mouseY;
+      });
     };
 
     canvas.addEventListener('mousemove', handleMouseMove);
