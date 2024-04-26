@@ -1,7 +1,25 @@
 import { PHOTO_BASE64 } from '@/lib/data';
+import { cn } from '@/lib/utils';
 import React, { useEffect, useRef } from 'react';
 
-type Props = {};
+type ImgPosition = 'left' | 'middle' | 'right';
+
+type ClassNames = {
+  canvasClassName?: string;
+  imgClassName?: string;
+};
+
+type Props = {
+  img_64: string;
+  pixelGap?: number;
+  pixelSize?: number;
+  pixelFriction?: number;
+  pixelEase?: number;
+  mouseCircleRadius?: number;
+  classNames?: ClassNames;
+  imgPositionX?: ImgPosition;
+  imgPositionY?: ImgPosition;
+};
 
 interface Particle {
   x: number;
@@ -28,19 +46,43 @@ interface Particle {
   update: () => void;
 }
 
-export default function ParticleComp({}: Props) {
+export default function ParticleComp({
+  img_64,
+  pixelGap = 4,
+  classNames,
+  imgPositionX = 'middle',
+  imgPositionY = 'middle',
+  pixelSize = 4,
+  pixelFriction = 0.98,
+  pixelEase = 0.8,
+  mouseCircleRadius = 1000
+}: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
   const animationRef = useRef<number | null>(null); // Ref to store animation frame ID
-  const PIXEL_GAP = 4;
+
+  const calculatePositionValue = (position: ImgPosition): number => {
+    switch (position) {
+      case 'left':
+        return 0;
+      case 'middle':
+        return 0.5;
+      case 'right':
+        return 1;
+      default:
+        return 0.5; // Default to 0 if position is not provided or invalid
+    }
+  };
+
+  const posX = calculatePositionValue(imgPositionX);
+  const posY = calculatePositionValue(imgPositionY);
 
   useEffect(() => {
     if (!canvasRef?.current || !imgRef?.current) return;
 
     const canvas = canvasRef.current;
-    const ctx = canvas?.getContext('2d');
+    const ctx = canvas?.getContext('2d', { willReadFrequently: true });
     const particles: Particle[] = [];
-    canvas.getBoundingClientRect();
     canvas.width = canvas.getBoundingClientRect().width;
     canvas.height = canvas.getBoundingClientRect().height;
 
@@ -82,8 +124,8 @@ export default function ParticleComp({}: Props) {
     function drawImage(img: HTMLImageElement) {
       ctx?.drawImage(
         img,
-        canvas.width * 0.5 - img.width * 0.5,
-        canvas.height * 0.5 - img.height * 0.5
+        canvas.width * posX - img.width * posX,
+        canvas.height * posY - img.height * posY
       );
     }
 
@@ -91,8 +133,8 @@ export default function ParticleComp({}: Props) {
       drawImage(image1);
       const pixels = ctx?.getImageData(0, 0, canvas.width, canvas.height).data;
       if (pixels) {
-        for (let y = 0; y < canvas?.height; y += PIXEL_GAP) {
-          for (let x = 0; x < canvas?.width; x += PIXEL_GAP) {
+        for (let y = 0; y < canvas?.height; y += pixelGap) {
+          for (let x = 0; x < canvas?.width; x += pixelGap) {
             const index = (y * canvas?.width + x) * 4;
             const red = pixels[index];
             const green = pixels[index + 1];
@@ -107,7 +149,7 @@ export default function ParticleComp({}: Props) {
                 originX: Math.floor(x),
                 originY: Math.floor(y),
                 color: color,
-                size: 4,
+                size: pixelSize,
                 vx: 0,
                 vy: 0,
                 dx: 0,
@@ -115,10 +157,10 @@ export default function ParticleComp({}: Props) {
                 distance: 0,
                 force: 0,
                 angle: 0,
-                friction: 0.98,
-                ease: 0.8,
+                friction: pixelFriction,
+                ease: pixelEase,
                 mouse: {
-                  radius: 1000,
+                  radius: mouseCircleRadius,
                   x: 0,
                   y: 0
                 },
@@ -156,7 +198,6 @@ export default function ParticleComp({}: Props) {
 
     animate();
 
-    // // Mouse move event handler
     const handleMouseMove = (event: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
       const mouseX = event.clientX - rect.left;
@@ -180,9 +221,16 @@ export default function ParticleComp({}: Props) {
   return (
     <canvas
       ref={canvasRef}
-      className='absolute z-50  h-full w-full  bg-blue-500 object-contain'
+      className={cn(
+        'absolute z-50  h-full w-full  bg-blue-500 object-contain',
+        classNames?.canvasClassName
+      )}
     >
-      <img ref={imgRef} src={PHOTO_BASE64} />
+      <img
+        ref={imgRef}
+        src={PHOTO_BASE64}
+        className={cn('', classNames?.imgClassName)}
+      />
     </canvas>
   );
 }
