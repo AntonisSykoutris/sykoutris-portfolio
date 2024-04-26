@@ -1,4 +1,3 @@
-import { PHOTO_BASE64 } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import React, { useEffect, useRef } from 'react';
 
@@ -228,7 +227,7 @@ export default function ParticleComp({
     >
       <img
         ref={imgRef}
-        src={PHOTO_BASE64}
+        src={img_64}
         className={cn('', classNames?.imgClassName)}
       />
     </canvas>
