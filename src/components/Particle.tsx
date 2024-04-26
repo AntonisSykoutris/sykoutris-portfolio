@@ -40,20 +40,13 @@ export default function ParticleComp({}: Props) {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext('2d');
     const particles: Particle[] = [];
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.getBoundingClientRect();
+    canvas.width = canvas.getBoundingClientRect().width;
+    canvas.height = canvas.getBoundingClientRect().height;
 
     const image1 = imgRef.current;
 
     const addParticle = (particle: Particle) => {
-      // particle.mousePosition = () => {
-      //   window.addEventListener('mousemove', event => {
-      //     particle.mouse.x = event.x;
-      //     particle.mouse.y = event.y;
-      //     console.log(particle.mouse.x, particle.mouse.y);
-      //   });
-      // };
       particle.update = () => {
         particle.dx = particle.mouse.x - particle.x;
         particle.dy = particle.mouse.y - particle.y;
@@ -94,7 +87,7 @@ export default function ParticleComp({}: Props) {
       );
     }
 
-    function initEffect(particles: any[]) {
+    function initEffect() {
       drawImage(image1);
       const pixels = ctx?.getImageData(0, 0, canvas.width, canvas.height).data;
       if (pixels) {
@@ -150,7 +143,7 @@ export default function ParticleComp({}: Props) {
       particles.forEach(particle => particle.update());
     }
 
-    initEffect(particles);
+    initEffect();
 
     function animate() {
       ctx?.clearRect(0, 0, canvas.width, canvas.height);
@@ -166,8 +159,8 @@ export default function ParticleComp({}: Props) {
     // // Mouse move event handler
     const handleMouseMove = (event: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
-      const mouseX = event.clientX;
-      const mouseY = event.clientY;
+      const mouseX = event.clientX - rect.left;
+      const mouseY = event.clientY - rect.top;
 
       particles.forEach(particle => {
         particle.mouse.x = mouseX;
