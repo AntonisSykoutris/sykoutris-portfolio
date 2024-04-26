@@ -116,9 +116,9 @@ export default function ParticleComp({}: Props) {
                 force: 0,
                 angle: 0,
                 friction: 0.98,
-                ease: 0.01,
+                ease: 0.8,
                 mouse: {
-                  radius: 3000,
+                  radius: 1000,
                   x: 0,
                   y: 0
                 },
