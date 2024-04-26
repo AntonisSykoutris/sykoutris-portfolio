@@ -221,7 +221,7 @@ export default function ParticleComp({
     <canvas
       ref={canvasRef}
       className={cn(
-        'absolute z-50  h-full w-full  bg-blue-500 object-contain',
+        'absolute z-50  h-full w-full   object-contain',
         classNames?.canvasClassName
       )}
     >
