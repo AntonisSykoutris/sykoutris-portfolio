@@ -13,7 +13,7 @@ export default function Skills() {
       customPaddings='p-0 lg:py-1 lg:py-0'
       className='relative z-10 bg-dot-black/[0.2] '
     >
-      <ImageToParticles img_64={PHOTO_BASE64} />
+      <ImageToParticles img_64={PHOTO_BASE64} pixelSize={1.9} pixelGap={2} />
     </Section>
   );
 }
