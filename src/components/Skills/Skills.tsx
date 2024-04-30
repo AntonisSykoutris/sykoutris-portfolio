@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Section from '../General/Section';
-import ParticleComp from '../Particle';
+import ImageToParticles from '../General/ImageToParticles';
 import { PHOTO_BASE64 } from '@/lib/data';
 
 export default function Skills() {
@@ -13,9 +13,7 @@ export default function Skills() {
       customPaddings='p-0 lg:py-1 lg:py-0'
       className='relative z-10 bg-dot-black/[0.2] '
     >
-      <ParticleComp img_64={PHOTO_BASE64} />
-      {/* <div className='pointer-events-none absolute inset-0 z-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div> */}
-      {/* <h1 className='z-50 text-4xl'>aaaaaaaaaaa</h1> */}
+      <ImageToParticles img_64={PHOTO_BASE64} />
     </Section>
   );
 }

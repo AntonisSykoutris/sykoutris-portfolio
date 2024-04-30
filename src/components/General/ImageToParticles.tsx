@@ -45,7 +45,7 @@ interface Particle {
   update: () => void;
 }
 
-export default function ParticleComp({
+export default function ImageToParticles({
   img_64,
   pixelGap = 4,
   classNames,
