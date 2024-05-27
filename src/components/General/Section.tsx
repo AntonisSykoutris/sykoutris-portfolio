@@ -13,14 +13,7 @@ type Props = {
   rightTopCross?: boolean;
 };
 
-function Section({
-  children,
-  id,
-  className,
-  customPaddings,
-  leftTopCross = false,
-  rightTopCross = false
-}: Props) {
+function Section({ children, id, className, customPaddings, leftTopCross = false, rightTopCross = false }: Props) {
   return (
     <motion.section
       className={cn(
@@ -32,14 +25,7 @@ function Section({
       )}
       id={id}
     >
-      <motion.div
-        className={cn(
-          'relative h-full w-full px-8 py-10 lg:py-14 ',
-          customPaddings
-        )}
-      >
-        {children}
-      </motion.div>
+      <motion.div className={cn('relative h-full w-full px-8 py-10 lg:py-14 ', customPaddings)}>{children}</motion.div>
 
       {leftTopCross ? (
         <div className='absolute left-[-1px] top-[-1px] h-3.5 w-3.5 rotate-0 border-l border-t border-black'></div>

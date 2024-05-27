@@ -1,7 +1,7 @@
 'use client';
-import MagneticFramer from '@/ui/magnetic-framer';
 import React from 'react';
 import { LuFacebook, LuInstagram, LuTwitter, LuLinkedin } from 'react-icons/lu';
+import MagneticFramer from '../ui/magnetic-framer';
 
 type Props = {};
 

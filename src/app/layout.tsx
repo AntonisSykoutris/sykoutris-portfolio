@@ -29,16 +29,11 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang='en'>
-      <meta
-        name='viewport'
-        content='user-scalable=no, width=device-width, initial-scale=1.0'
-      />
+      <meta name='viewport' content='user-scalable=no, width=device-width, initial-scale=1.0' />
       <body>
         <SmoothScroll>
           <Navbar />
-          <main className='mx-auto flex w-[85svw] flex-col items-center md:w-[70svw] lg:w-[60svw]'>
-            {children}
-          </main>
+          <main className='mx-auto flex w-[85svw] flex-col items-center md:w-[70svw] lg:w-[60svw]'>{children}</main>
           <Footer />
         </SmoothScroll>
       </body>
