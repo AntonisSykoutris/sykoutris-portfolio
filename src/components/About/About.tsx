@@ -3,7 +3,7 @@
 import React from 'react';
 import Section from '../General/Section';
 import ImageToParticles from '../General/ImageToParticles';
-import { PHOTO_BASE64 } from '@/lib/data';
+import { PHOTO_BASE64, gridItems } from '@/lib/data';
 import { TbAlarmSnoozeFilled } from 'react-icons/tb';
 
 import { cn } from '@/lib/utils';
@@ -18,15 +18,20 @@ export default function Skills() {
       customPaddings='p-0 lg:py-1 lg:py-0'
       className='relative z-10 bg-dot-black/[0.2] '
     >
-      <BentoGrid className='mx-auto max-w-4xl md:auto-rows-[20rem]'>
-        {items.map((item, i) => (
+           <BentoGrid className="w-full py-20">
+        {gridItems.map((item, i) => (
           <BentoGridItem
+            id={item.id}
             key={i}
             title={item.title}
             description={item.description}
-            header={item.header}
-            className={cn('[&>p:text-lg]', item.className)}
-            icon={item.icon}
+            // remove icon prop
+            // remove original classname condition
+            className={item.className}
+            img={item.img}
+            imgClassName={item.imgClassName}
+            titleClassName={item.titleClassName}
+            spareImg={item.spareImg}
           />
         ))}
       </BentoGrid>

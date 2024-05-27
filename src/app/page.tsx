@@ -4,6 +4,7 @@ import { MotionConfig } from 'framer-motion';
 import { framerMotionConfig } from '@/lib/utils';
 import Skills from '@/components/Skills/Skills';
 import SectionDivider from '@/components/General/SectionDivider';
+import About from '@/components/About/About';
 
 export default function Home() {
   return (
@@ -13,9 +14,10 @@ export default function Home() {
       }}
     >
       {/* <Hero /> */}
-      {/* <About /> */}
       <SectionDivider className='mt-5' />
-      <Skills />
+      <About />
+
+      {/* <Skills /> */}
       {/* <SectionDivider className='' /> */}
       {/* <Skills /> */}
     </MotionConfig>
