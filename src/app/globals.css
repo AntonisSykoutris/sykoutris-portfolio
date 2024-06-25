@@ -160,3 +160,18 @@ body {
   height: 1px;
   /* padding-top: 100px; */
 }
+
+
+.lottie-svg-class{
+  height:calc(max(80%, 20%))!important;
+  width:100% !important;
+  z-index: -1;
+}
+
+@media only screen and (max-height: 600px) {
+  .lottie-svg-class {
+    height: 40% !important;
+    width: 40% !important;
+    z-index: -1;
+  }
+}
