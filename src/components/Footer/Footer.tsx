@@ -28,7 +28,7 @@ export default function Footer() {
     flex-col items-start justify-end'
       ref={container}
     >
-      <svg className='mb-40 w-full' viewBox='0 0 250 90'>
+      {/* <svg className='mb-40 w-full' viewBox='0 0 250 90'>
         <path
           fill='none'
           id='curve'
@@ -48,7 +48,7 @@ export default function Footer() {
             );
           })}
         </text>
-      </svg>
+      </svg> */}
       <Logos scrollYProgress={scrollYProgress} />
     </section>
   );
@@ -63,7 +63,7 @@ const Logos = ({
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className=' w-full overflow-hidden bg-black' id='contact_section'>
+    <div className=' w-full overflow-hidden  bg-transparent' id='contact_section'>
       <motion.div
         style={{ y }}
         className='flex h-full flex-col items-center justify-center gap-10 p-10 px-4 md:px-8'

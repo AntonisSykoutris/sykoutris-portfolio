@@ -1,8 +1,7 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { domAnimation, LazyMotion, m } from 'framer-motion';
 import { ReactNode } from 'react';
-import { LuPlus } from 'react-icons/lu';
 
 type Props = {
   children: ReactNode;
@@ -15,7 +14,8 @@ type Props = {
 
 function Section({ children, id, className, customPaddings, leftTopCross = false, rightTopCross = false }: Props) {
   return (
-    <motion.section
+    <LazyMotion features={domAnimation} strict>
+         <m.section
       className={cn(
         `
       mx-auto flex h-screen w-full flex-col items-start
@@ -25,23 +25,25 @@ function Section({ children, id, className, customPaddings, leftTopCross = false
       )}
       id={id}
     >
-      <motion.div className={cn('relative h-full w-full px-8 py-10 lg:py-14 ', customPaddings)}>{children}</motion.div>
+      <m.div className={cn('relative h-full w-full px-8 py-10 lg:py-14 ', customPaddings)}>{children}</m.div>
 
       {leftTopCross ? (
-        <div className='absolute left-[-1px] top-[-1px] h-3.5 w-3.5 rotate-0 border-l border-t border-black'></div>
+        <div className='absolute left-[-1px] top-[-1px] h-3.5 w-3.5 rotate-0 border-l border-t border-[#e6e6e6]'></div>
       ) : (
         <></>
       )}
 
       {rightTopCross ? (
-        <div className='absolute right-[-1px] top-[-1px] h-3.5 w-3.5 rotate-90 border-l  border-t border-black'></div>
+        <div className='absolute right-[-1px] top-[-1px] h-3.5 w-3.5 rotate-90 border-l  border-t border-[#e6e6e6]'></div>
       ) : (
         <></>
       )}
 
-      <div className='absolute bottom-[-1px] left-[-1px] h-3.5 w-3.5 -rotate-90 border-l border-t border-black'></div>
-      <div className='absolute bottom-[-1px] right-[-1px] h-3.5 w-3.5 rotate-180 border-l border-t border-black'></div>
-    </motion.section>
+      <div className='absolute bottom-[-1px] left-[-1px] h-3.5 w-3.5 -rotate-90 border-l border-t border-[#e6e6e6]'></div>
+      <div className='absolute bottom-[-1px] right-[-1px] h-3.5 w-3.5 rotate-180 border-l border-t border-[#e6e6e6]'></div>
+    </m.section>
+    </LazyMotion>
+ 
   );
 }
 

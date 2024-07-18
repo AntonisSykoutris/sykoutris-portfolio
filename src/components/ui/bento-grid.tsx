@@ -4,7 +4,7 @@ import { cn } from '../../utils/cn';
 import { BackgroundGradientAnimation } from './GradientBg';
 import GridGlobe from './GridGlobe';
 import animationData from '@/lib/design.json';
-import Lottie from "react-lottie";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
 export const BentoGrid = ({
@@ -71,40 +71,26 @@ export const BentoGridItem = ({
   return (
     <div
     className={cn(
-      "row-span-1 relative overflow-hidden rounded-2xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input justify-between flex flex-col space-y-4",
+      "row-span-1 relative overflow-hidden rounded-xl border bg-background/[0.5] border-primary/[0.4] group/bento hover:shadow-xl transition duration-200 shadow-input justify-between flex flex-col space-y-4",
       className
     )}
     style={{
-      background: "rgb(4,7,29)",
       backgroundColor:
         "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
     }}
       id={`${id}`}
     >
      <div className={`${id === 6 && "flex justify-center"} h-full`}>
-        <div className="w-full h-full absolute">
-          {img && (
-            <img
-              src={img}
-              alt={img}
-              className={cn(imgClassName, "object-cover object-center ")}
-            />
-          )}
-          {id === 1 ?  <Lottie options={defaultOptions} height={500} width={500} speed={0.025} /> : null}
-          
-        </div>
-        <div
-          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
-            } `}
-        >
-          {spareImg && (
-            <img
-              src={spareImg}
-              alt={spareImg}
-              className="object-cover object-center w-full h-full "
-            />
-          )}
-        </div>
+      
+{id === 1 && (
+    <div className="w-full h-full absolute -bottom-10 md:bottom-10">
+    <DotLottieReact
+  src="/ui.lottie"
+  loop
+  autoplay
+/> </div>
+)}
+
         {id === 6 && (
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
@@ -127,37 +113,22 @@ export const BentoGridItem = ({
           </div>
 
           {/* for the github 3d globe */}
-          {id === 2 && <GridGlobe />}
+          {id === 2 &&     <div className="w-full h-full flex left-0 -bottom-16 md:-bottom-24 absolute">
+    <DotLottieReact
+  src="/globe.lottie"
+  loop
+  autoplay
+/> </div> }
 
           {/* Tech stack list div */}
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2 text-white">
-              {/* tech stack lists */}
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                {leftLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg  text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-              </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                {rightLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <div className="w-full h-full flex left-0 -bottom-5 md:-bottom-12 absolute">
+            <DotLottieReact
+          src="/nature.lottie"
+          loop
+          speed={0.5}
+          autoplay
+        /> </div>
           )}
           {id === 6 && (
             <div className="mt-5 relative">

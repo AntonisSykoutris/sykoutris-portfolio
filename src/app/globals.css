@@ -7,13 +7,25 @@
   src: url('../../public/PPPangaia-Bold.otf');
 } */
 
-body {
-  font-family: 'Main';
-  /* background-color: rgb(254, 242, 242); */
-  /* background-color: black; */
-  /* background-color: #0e0c15; */
-  overflow-x: hidden !important;
+@font-face {
+  font-family: "Vermin Vibes";
+  src: url(/Fonts/Vermin/vermin_vibes.otf);
 }
+
+body {
+  background: url("https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png");
+  background-color: #16171b;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-overflow-x: hidden;
+}
+
+.overflow-hidden-web {
+  overflow: hidden;
+  -webkit-overflow: hidden;
+}
+
+
 
 .preserve-3d {
   transform-style: preserve-3d;
@@ -75,6 +87,8 @@ body {
   width: 80vw;
 }
 
+
+
 #left-side {
   width: 60%;
   z-index: 2;
@@ -118,12 +132,93 @@ body {
   transform: translateX(calc(35svw * -1));
   background: repeating-linear-gradient(
     90deg,
-    #666666,
-    #666666 4px,
+    #e6e6e6,
+    #e6e6e6 4px,
     transparent 6px,
     transparent 10px
   );
   z-index: 1;
+}
+
+
+.bounce {
+  transition: all 0.3s ease-out;
+}
+
+.bounce:hover {
+  display: inline-block;
+  animation: rubberband 0.8s ease-out;
+  color: #0fba74;
+}
+
+@keyframes rubberband {
+  0% {
+    transform: scaleX(1);
+  }
+  40% {
+    transform: scaleX(1.12) scaleY(0.75);
+  }
+  55% {
+    transform: scaleX(0.85) scaleY(1);
+  }
+  65% {
+    transform: scaleX(1.09) scaleY(0.85);
+  }
+  75% {
+    transform: scaleX(0.9) scaleY(1);
+  }
+  90% {
+    transform: scaleX(1.05) scaleY(0.95);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+
+.arrowpath,
+polyline {
+  fill: none;
+  stroke: #515152;
+  vector-effect: non-scaling-stroke;
+  stroke-width: 2;
+}
+
+.arrowpath {
+  stroke-dasharray: 11, 5;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+@keyframes rubberband {
+  0% {
+    transform: scaleX(1);
+  }
+  40% {
+    transform: scaleX(1.12) scaleY(0.75);
+  }
+  55% {
+    transform: scaleX(0.85) scaleY(1);
+  }
+  65% {
+    transform: scaleX(1.09) scaleY(0.85);
+  }
+  75% {
+    transform: scaleX(0.9) scaleY(1);
+  }
+  90% {
+    transform: scaleX(1.05) scaleY(0.95);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
 }
 
 /* Media query for small devices */
@@ -147,12 +242,12 @@ body {
 
 .divider-line::before {
   left: 0;
-  background: linear-gradient(90deg, white 0, transparent 100%);
+  background: linear-gradient(90deg, #16171b 0, transparent 100%);
 }
 
 .divider-line::after {
   right: 0;
-  background: linear-gradient(90deg, transparent 0, white 100%);
+  background: linear-gradient(90deg, transparent 0, #16171b 100%);
 }
 
 .section-divider {

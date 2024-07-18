@@ -1,24 +1,18 @@
-'use client';
+'use client'
 
-import React from 'react';
+import React from 'react'
 import Section from '../General/Section';
-import ImageToParticles from '../General/ImageToParticles';
-import { PHOTO_BASE64, gridItems } from '@/lib/data';
-import { TbAlarmSnoozeFilled } from 'react-icons/tb';
-
-import { cn } from '@/lib/utils';
+import SectionTitle from '../General/SectionTitle';
+import { gridItems } from '@/lib/data';
 import { BentoGrid, BentoGridItem } from '../ui/bento-grid';
 
-export default function Skills() {
+type Props = {}
+
+export default function About({}: Props) {
   return (
-    <Section
-      id='about_section'
-      leftTopCross
-      rightTopCross
-      customPaddings='p-0 lg:py-1 lg:py-0'
-      className='relative z-10 bg-dot-black/[0.2] h-full'
-    >
-      <BentoGrid className='w-full py-10 xl:py-20'>
+    <Section className='h-fit'>
+         <SectionTitle title="ABOUT ME" subtitle="Introduction" />
+         <BentoGrid className='w-full py-10 xl:py-20'>
         {gridItems.map(({id,title,description, className, img , imgClassName, titleClassName, spareImg}, i) => (
           <BentoGridItem
             id={id}
@@ -34,5 +28,5 @@ export default function Skills() {
         ))}
       </BentoGrid>
     </Section>
-  );
+  )
 }
