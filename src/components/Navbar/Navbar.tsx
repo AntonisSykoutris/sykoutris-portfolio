@@ -23,21 +23,21 @@ export default function Navbar() {
           initial={false}
           animate={isActive ? 'open' : 'closed'}
           onClick={() => setIsActive(pv => !pv)}
-          className=' md:p-auto hamburger fixed right-5 top-5 z-50 h-12 w-12 rounded-full bg-black  p-8  transition-colors hover:bg-black/80 md:h-16 md:w-16'
+          className=' md:p-auto hamburger fixed right-5 top-5 z-50 h-12 w-12 rounded-full bg-background  p-8  transition-colors hover:bg-background/80 md:h-16 md:w-16'
         >
           <motion.span
             variants={top}
-            className='hamburger absolute h-1 w-10  bg-foreground '
+            className='hamburger absolute h-1 w-10  bg-secondary-content'
             style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }}
           />
           <motion.span
             variants={middle}
-            className='hamburger absolute h-1 w-10  bg-foreground '
+            className='hamburger absolute h-1 w-10  bg-secondary-content '
             style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }}
           />
           <motion.span
             variants={bottom}
-            className='hamburger absolute h-1 w-5  bg-foreground '
+            className='hamburger absolute h-1 w-5  bg-secondary-content '
             style={{
               x: '-50%',
               y: '50%',

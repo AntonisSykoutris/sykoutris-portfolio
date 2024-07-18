@@ -1,9 +1,8 @@
 'use client';
 import { MotionConfig } from 'framer-motion';
-
 import { framerMotionConfig } from '@/lib/utils';
-import Skills from '@/components/Skills/Skills';
 import SectionDivider from '@/components/General/SectionDivider';
+import Hero from '@/components/Hero/Hero';
 import About from '@/components/About/About';
 
 export default function Home() {
@@ -13,13 +12,12 @@ export default function Home() {
         ...framerMotionConfig,
       }}
     >
-      {/* <Hero /> */}
-      <SectionDivider className='mt-5' />
-      <About />
+    <SectionDivider className='' />
+    <Hero/>
+    <SectionDivider className='' />
+    <About/>
+ <div className='mt-10'></div>
 
-      {/* <Skills /> */}
-      {/* <SectionDivider className='' /> */}
-      {/* <Skills /> */}
     </MotionConfig>
   );
 }
