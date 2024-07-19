@@ -164,7 +164,7 @@ export const PHOTO_BASE64 =
 
   {
     id: 5,
-    title: "Gamer at Heart, Gym Rat by Choice",
+    title: "UX/UI Designer & Developer",
     description: "Behind the Scenes",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -178,7 +178,7 @@ export const PHOTO_BASE64 =
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
-    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
+    titleClassName: "justify-center md:max-w-full max-w-60 text-center px-3",
     img: "",
     spareImg: "",
   },
