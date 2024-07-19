@@ -15,7 +15,7 @@ const HeroText = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, type: "spring" }}
-          className="text-center flex justify-center  items-center flex-col opacity-100 text-3xl sm:text-6xl cursor-default"
+          className="text-center flex justify-center  items-center flex-col opacity-100 text-xl sm:text-3xl md:text-6xl cursor-default"
           style={{ fontFamily: "Vermin Vibes, sans-serif" }}
         >
           <m.span

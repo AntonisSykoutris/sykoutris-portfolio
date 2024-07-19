@@ -16,7 +16,7 @@ export default function Home() {
     <Hero/>
     <SectionDivider className='' />
     <About/>
- <div className='mt-10'></div>
+ {/* <div className='mt-10'></div> */}
 
     </MotionConfig>
   );

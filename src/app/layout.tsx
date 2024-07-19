@@ -29,7 +29,7 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang='en'>
-      <meta name='viewport' content='user-scalable=no, width=device-width, initial-scale=1.0' />
+      <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
       <body>
         <SmoothScroll>
           <Navbar />

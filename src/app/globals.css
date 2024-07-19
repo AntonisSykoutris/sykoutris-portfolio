@@ -12,12 +12,19 @@
   src: url(/Fonts/Vermin/vermin_vibes.otf);
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   background: url("https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png");
   background-color: #16171b;
   position: relative;
   overflow-x: hidden;
-  -webkit-overflow-x: hidden;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .overflow-hidden-web {

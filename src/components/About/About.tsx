@@ -10,7 +10,7 @@ type Props = {}
 
 export default function About({}: Props) {
   return (
-    <Section className='h-fit'>
+    <Section className='h-fit overflow-x-hidden'>
          <SectionTitle title="ABOUT ME" subtitle="Introduction" />
          <BentoGrid className='w-full py-10 xl:py-20'>
         {gridItems.map(({id,title,description, className, img , imgClassName, titleClassName, spareImg}, i) => (

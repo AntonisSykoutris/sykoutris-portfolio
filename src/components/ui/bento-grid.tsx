@@ -61,13 +61,6 @@ export const BentoGridItem = ({
     },
   };
 
-  const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-  };
-
-
   return (
     <div
     className={cn(
@@ -107,7 +100,7 @@ export const BentoGridItem = ({
             {description}
           </div>
           <div
-            className={`font-sans text-lg lg:text-3xl max-w-full font-bold z-10 text-white`}
+            className={`font-sans text-base sm:text-lg lg:text-3xl max-w-full font-bold z-10 text-white`}
           >
             {title}
           </div>
