@@ -1,5 +1,5 @@
 'use client';
-import { MotionConfig } from 'framer-motion';
+import {  MotionConfig } from 'framer-motion';
 import { framerMotionConfig } from '@/lib/utils';
 import SectionDivider from '@/components/General/SectionDivider';
 import Hero from '@/components/Hero/Hero';
@@ -16,7 +16,6 @@ export default function Home() {
     <Hero/>
     <SectionDivider className='' />
     <About/>
- {/* <div className='mt-10'></div> */}
 
     </MotionConfig>
   );

@@ -74,15 +74,15 @@ export const BentoGridItem = ({
       id={`${id}`}
     >
      <div className={`${id === 6 && "flex justify-center"} h-full`}>
-      
-{id === 1 && (
-    <div className="w-full h-full absolute -bottom-10 md:bottom-10">
+
+{id === 1 ? (
+    <div className="w-full h-full absolute -bottom-10 md:bottom-4">
     <DotLottieReact
   src="/ui.lottie"
   loop
   autoplay
 /> </div>
-)}
+): <></>}
 
         {id === 6 && (
           <BackgroundGradientAnimation>
@@ -93,29 +93,29 @@ export const BentoGridItem = ({
         <div
           className={cn(
             titleClassName,
-            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
+            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5"
           )}
         >
           <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
             {description}
           </div>
           <div
-            className={`font-sans text-base sm:text-lg lg:text-3xl max-w-full font-bold z-10 text-white`}
+            className={`font-sans text-base sm:text-lg lg:text-lg 2xl:text-xl max-w-full font-bold z-10 text-white`}
           >
             {title}
           </div>
 
-          {/* for the github 3d globe */}
-          {id === 2 &&     <div className="w-full h-full flex left-0 -bottom-16 md:-bottom-24 absolute">
+          {/* for the github 3d globe and the origami */}
+          {id === 2 ?  <div className="w-full h-full flex left-0 -bottom-16 md:-bottom-24 absolute">
     <DotLottieReact
   src="/globe.lottie"
   loop
   autoplay
-/> </div> }
+/> </div> : <></>}
 
           {/* Tech stack list div */}
           {id === 3 && (
-            <div className="w-full h-full flex left-0 -bottom-5 md:-bottom-12 absolute">
+            <div className="w-full h-full flex left-0 -bottom-5 md:-bottom-11 absolute">
             <DotLottieReact
           src="/nature.lottie"
           loop
@@ -123,17 +123,15 @@ export const BentoGridItem = ({
           autoplay
         /> </div>
           )}
+
+
+
           {id === 6 && (
             <div className="mt-5 relative">
-              {/* button border magic from tailwind css buttons  */}
-              {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-              {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-              {/* add handleCopy() for the copy the text */}
               <div
                 className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
                   }`}
               >
-                {/* <img src="/confetti.gif" alt="confetti" /> */}
                 {/* <Lottie options={defaultOptions} height={200} width={400} /> */}
               </div>
 
@@ -146,6 +144,8 @@ export const BentoGridItem = ({
               /> */}
             </div>
           )}
+
+
         </div>
       </div>
     </div>

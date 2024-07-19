@@ -1,6 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { domAnimation, LazyMotion, m } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
 type Props = {
@@ -10,12 +10,13 @@ type Props = {
   customPaddings?: string;
   leftTopCross?: boolean;
   rightTopCross?: boolean;
+  leftBottomCross?: boolean;
+  rightBottomCross?: boolean;
 };
 
-function Section({ children, id, className, customPaddings, leftTopCross = false, rightTopCross = false }: Props) {
+function Section({ children, id, className, customPaddings, leftTopCross = false, rightTopCross = false, leftBottomCross = false, rightBottomCross = false }: Props) {
   return (
-    <LazyMotion features={domAnimation} strict>
-         <m.section
+         <motion.section
       className={cn(
         `
       mx-auto flex h-screen w-full flex-col items-start
@@ -25,7 +26,7 @@ function Section({ children, id, className, customPaddings, leftTopCross = false
       )}
       id={id}
     >
-      <m.div className={cn('relative h-full w-full px-8 py-10 lg:py-14 ', customPaddings)}>{children}</m.div>
+      <motion.div className={cn('relative h-full w-full px-8 py-10 lg:py-14 ', customPaddings)}>{children}</motion.div>
 
       {leftTopCross ? (
         <div className='absolute left-[-1px] top-[-1px] h-3.5 w-3.5 rotate-0 border-l border-t border-[#e6e6e6]'></div>
@@ -39,10 +40,21 @@ function Section({ children, id, className, customPaddings, leftTopCross = false
         <></>
       )}
 
+
+{leftBottomCross ? (
       <div className='absolute bottom-[-1px] left-[-1px] h-3.5 w-3.5 -rotate-90 border-l border-t border-[#e6e6e6]'></div>
+      ) : (
+        <></>
+      )}
+
+{rightBottomCross ? (
       <div className='absolute bottom-[-1px] right-[-1px] h-3.5 w-3.5 rotate-180 border-l border-t border-[#e6e6e6]'></div>
-    </m.section>
-    </LazyMotion>
+      ) : (
+        <></>
+      )}
+
+
+    </motion.section>
  
   );
 }
