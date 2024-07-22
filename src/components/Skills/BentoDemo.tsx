@@ -1,17 +1,15 @@
+'use client'
+
 import { GlobeIcon, FileTextIcon, } from "@radix-ui/react-icons";
-import { BellIcon, Share2Icon,GraduationCap } from "lucide-react";
+import { Share2Icon,GraduationCap } from "lucide-react";
+import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 
 import { cn } from "@/lib/utils";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { AnimatedBeamMultipleOutputDemo } from "./AnimatedBeamsDemo";
 import Marquee from "@/components/magicui/marquee";
-import { AnimatedListDemo } from "./AnimatedListDemo";
 import Globe from "../magicui/globe";
-import LetterPullup from "../magicui/letter-pullup";
-import BoxReveal from "../magicui/box-reveal";
-import { FlipWords } from "../ui/flip-words";
-import AnimatedGradientText from "../magicui/animated-gradient-text";
-import SparklesText from "../magicui/sparkles-text";
+import { motion } from "framer-motion";
 
 const files = [
   {
@@ -74,17 +72,35 @@ const features = [
   },
   {
     Icon: GraduationCap,
-    name: "Notifications",
-    description: "Get notified when something happens.",
+    name: "Who am I?",
+    description: "Something to know me better.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
-    <div className="text-4xl px-4 pt-4 mx-auto font-normal">
-       I Build<FlipWords words={["better", "cute", "beautiful", "modern"]} /> 
-        websites with love ❤ <br /> I create modern
-        <SparklesText className=" inline-block font-normal" text="UI/UX" /> 
-        
+    <div className=" absolute w-full px-4 pt-4 mx-auto h-full font-normal">
+         <HeroHighlight>
+      <motion.h1
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        animate={{
+          opacity: 1,
+          y: [20, -5, 0],
+        }}
+        transition={{
+          duration: 0.5,
+          ease: [0.4, 0.0, 0.2, 1],
+        }}
+        className="text-base px-4 mt-0 md:text-xl lg:text-2xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
+      >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex ipsum quisquam ullam veritatis animi quo est aliquid sit, quos molestias, architecto excepturi necessitatibus molestiae facere quis quibusdam perspiciatis, accusamus
+        <Highlight className="text-black dark:text-white">
+          Important.
+        </Highlight>
+      </motion.h1>
+    </HeroHighlight>
       </div>
     ),
   },

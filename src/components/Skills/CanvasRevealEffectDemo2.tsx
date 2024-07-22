@@ -36,7 +36,7 @@ export function CanvasRevealEffectDemo2() {
             dotSize={2}
           />
           {/* Radial gradient for the cute fade */}
-          <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90" />
+          <div className="absolute inset-0 [mask-image:radial-gradient(50px_at_center,white,transparent)] bg-black/90" />
         </Card>
         <Card title="UI/UX Designer" icon={<DotLottieReact
   src="/designer.lottie"
