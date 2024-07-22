@@ -105,8 +105,8 @@ const features = [
   },
   {
     Icon: Share2Icon,
-    name: "Integrations",
-    description: "Supports 100+ integrations and counting.",
+    name: "Activities",
+    description: "Activities beyond work bring joy.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
