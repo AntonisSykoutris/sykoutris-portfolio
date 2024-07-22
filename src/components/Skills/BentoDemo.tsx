@@ -93,7 +93,7 @@ const features = [
           duration: 0.5,
           ease: [0.4, 0.0, 0.2, 1],
         }}
-        className="text-base px-4 mt-0 md:text-xl lg:text-2xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
+        className="text-base px-4 mt-0 md:text-xl lg:text-2xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug mx-auto "
       >
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex ipsum quisquam ullam veritatis animi quo est aliquid sit, quos molestias, architecto excepturi necessitatibus molestiae facere quis quibusdam perspiciatis, accusamus
         <Highlight className="text-black dark:text-white">
