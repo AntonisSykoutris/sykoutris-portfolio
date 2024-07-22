@@ -75,7 +75,6 @@ const features = [
     name: "Who am I?",
     description: "Something to know me better.",
     href: "#",
-    cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
     <div className=" absolute w-full px-4 pt-4 mx-auto h-full font-normal">
@@ -112,7 +111,7 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <AnimatedBeamMultipleOutputDemo className="absolute right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
+      <AnimatedBeamMultipleOutputDemo className="absolute right-2 top-4 h-full w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
@@ -122,7 +121,10 @@ const features = [
     className: "col-span-3 lg:col-span-1",
     href: "#",
     background: (
+      <>
+        <h1 className="leading-relaxed  text-center pt-5 font-bold text-4xl">NO BORDERS</h1>
        <Globe className="lg:top-28 absolute max-sm:top-3/4 left-1/2 transform -translate-x-1/2 max-sm:-translate-y-1/2  h-fit" />
+      </>
     ),
   },
 ];
