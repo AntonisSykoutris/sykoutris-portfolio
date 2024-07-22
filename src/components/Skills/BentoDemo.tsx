@@ -122,7 +122,9 @@ const features = [
     href: "#",
     background: (
       <>
-        <h1 className="leading-relaxed  text-center pt-5 font-bold text-4xl">NO BORDERS</h1>
+        <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text:4xl md:text-8xl font-semibold justify-center z-50 pt-5 relative flex  leading-none text-transparent dark:from-white dark:to-slate-900/10">
+        Globe
+      </span>
        <Globe className="lg:top-28 absolute max-sm:top-3/4 left-1/2 transform -translate-x-1/2 max-sm:-translate-y-1/2  h-fit" />
       </>
     ),
