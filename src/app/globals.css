@@ -2,6 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root  {
+  --background: 154 40% 100%;
+  --foreground: 154 5% 10%;
+  --card: 154 40% 100%;
+  --card-foreground: 154 5% 15%;
+  --popover: 154 40% 100%;
+  --popover-foreground: 154 95% 10%;
+  --primary: 154 65.1% 46.1%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 154 30% 90%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 116 30% 95%;
+  --muted-foreground: 154 5% 40%;
+  --accent: 116 30% 90%;
+  --accent-foreground: 154 5% 15%;
+  --destructive: 0 50% 50%;
+  --destructive-foreground: 154 5% 100%;
+  --border: 154 30% 82%;
+  --input: 154 30% 50%;
+  --ring: 154 65.1% 46.1%;
+  --radius: 0.5rem;
+}
+.dark  {
+  --background: 154 40% 10%;
+  --foreground: 154 5% 100%;
+  --card: 154 40% 10%;
+  --card-foreground: 154 5% 100%;
+  --popover: 154 40% 5%;
+  --popover-foreground: 154 5% 100%;
+  --primary: 154 65.1% 46.1%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 154 30% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 116 30% 25%;
+  --muted-foreground: 154 5% 65%;
+  --accent: 116 30% 25%;
+  --accent-foreground: 154 5% 95%;
+  --destructive: 0 50% 50%;
+  --destructive-foreground: 154 5% 100%;
+  --border: 154 30% 50%;
+  --input: 154 30% 50%;
+  --ring: 154 65.1% 46.1%;
+  --radius: 0.5rem;
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+
 /* @font-face {
   font-family: 'Main';
   src: url('../../public/PPPangaia-Bold.otf');

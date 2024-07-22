@@ -29,7 +29,7 @@ export default function NavMenu({ setIsActive }: Props) {
       initial='initial'
       animate='enter'
       exit='exit'
-      className='menu  fixed right-0 top-0 z-30 flex h-screen w-full bg-background text-secondary-content md:w-fit'
+      className='menu  fixed right-0 top-0 z-30 flex h-screen w-full bg-card text-secondary-content md:w-fit'
     >
       <div className=' flex h-full flex-col justify-between'>
         <div

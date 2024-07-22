@@ -30,10 +30,10 @@ function NavLink({ data, isActive, setIsActive, setSelectedIndicator }: Props) {
       <motion.div
         variants={navMenuScale}
         animate={isActive ? 'open' : 'closed'}
-        className=' absolute -left-8  h-2 w-2  rounded-lg   bg-foreground '
+        className=' absolute -left-8  h-2 w-2  rounded-lg   bg-primary '
       ></motion.div>
       <div
-        className='relative select-none after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-foreground after:transition-transform after:duration-300 after:ease-in-out hover:cursor-pointer hover:after:origin-bottom-left hover:after:scale-x-100 '
+        className='relative select-none after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 after:ease-in-out hover:cursor-pointer hover:after:origin-bottom-left hover:after:scale-x-100 '
         onClick={() => {
           scrolltoHash(`${href}`);
           setIsActive(false);

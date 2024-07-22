@@ -7,7 +7,7 @@ const HeroText = () => {
 
   return (
     <div
-      className="noselect flex mt-10 text-foreground container h-fit absolute z-10  flex-col justify-center items-center rounded-[50%]"
+      className="noselect flex mt-10 text-primary-foreground container h-fit absolute z-10  flex-col justify-center items-center rounded-[50%]"
       id="repulse-div"
     >
       <LazyMotion features={domAnimation} strict>
