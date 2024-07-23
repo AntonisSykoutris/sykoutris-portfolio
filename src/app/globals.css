@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-:root  {
+:root {
   --background: 154 40% 100%;
   --foreground: 154 5% 10%;
   --card: 154 40% 100%;
@@ -25,7 +24,7 @@
   --ring: 154 65.1% 46.1%;
   --radius: 0.5rem;
 }
-.dark  {
+.dark {
   --background: 154 40% 10%;
   --foreground: 154 5% 100%;
   --card: 154 40% 10%;
@@ -48,7 +47,6 @@
   --radius: 0.5rem;
 }
 
-
 @layer base {
   * {
     @apply border-border;
@@ -58,39 +56,36 @@
   }
 }
 
-
-
 /* @font-face {
   font-family: 'Main';
   src: url('../../public/PPPangaia-Bold.otf');
 } */
 
 @font-face {
-  font-family: "Vermin Vibes";
+  font-family: 'Vermin Vibes';
   src: url(/Fonts/Vermin/vermin_vibes.otf);
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
 body {
-  background: url("https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png");
+  background: url('https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png');
   background-color: #16171b;
   position: relative;
   overflow-x: hidden;
   width: 100%;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .overflow-hidden-web {
   overflow: hidden;
   -webkit-overflow: hidden;
 }
-
-
 
 .preserve-3d {
   transform-style: preserve-3d;
@@ -152,8 +147,6 @@ body {
   width: 80vw;
 }
 
-
-
 #left-side {
   width: 60%;
   z-index: 2;
@@ -204,7 +197,6 @@ body {
   );
   z-index: 1;
 }
-
 
 .bounce {
   transition: all 0.3s ease-out;
@@ -260,7 +252,6 @@ polyline {
   -ms-user-select: none;
   user-select: none;
 }
-
 
 @keyframes rubberband {
   0% {
@@ -321,10 +312,9 @@ polyline {
   /* padding-top: 100px; */
 }
 
-
-.lottie-svg-class{
-  height:calc(max(80%, 20%))!important;
-  width:100% !important;
+.lottie-svg-class {
+  height: calc(max(80%, 20%)) !important;
+  width: 100% !important;
   z-index: -1;
 }
 
