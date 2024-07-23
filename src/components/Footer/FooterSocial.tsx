@@ -9,16 +9,16 @@ export default function FooterSocial({}: Props) {
   return (
     <>
       <MagneticFramer>
-        <LuFacebook className=' h-6 w-6 cursor-pointer   text-foreground   transition duration-200 ease-in-out hover:text-primary ' />
+        <LuFacebook className='h-6 w-6 cursor-pointer text-primary-foreground transition duration-200 ease-in-out hover:text-primary' />
       </MagneticFramer>
       <MagneticFramer>
-        <LuInstagram className=' h-6 w-6 cursor-pointer   text-foreground    transition duration-200 ease-in-out hover:text-primary ' />
+        <LuInstagram className='h-6 w-6 cursor-pointer text-primary-foreground transition duration-200 ease-in-out hover:text-primary' />
       </MagneticFramer>
       <MagneticFramer>
-        <LuTwitter className=' h-6 w-6 cursor-pointer  text-foreground    transition duration-200 ease-in-out hover:text-primary ' />
+        <LuTwitter className='h-6 w-6 cursor-pointer text-primary-foreground transition duration-200 ease-in-out hover:text-primary' />
       </MagneticFramer>
       <MagneticFramer>
-        <LuLinkedin className=' h-6 w-6 cursor-pointer  text-foreground    transition duration-200 ease-in-out hover:text-primary ' />
+        <LuLinkedin className='h-6 w-6 cursor-pointer text-primary-foreground transition duration-200 ease-in-out hover:text-primary' />
       </MagneticFramer>
     </>
   );

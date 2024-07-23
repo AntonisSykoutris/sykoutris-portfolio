@@ -1,10 +1,18 @@
-"use client";
+'use client';
 
-import React, { forwardRef, useRef } from "react";
+import React, { forwardRef, useRef } from 'react';
 
-import { cn } from "@/lib/utils";
-import { AnimatedBeam } from "@/components/magicui/animated-beam";
-import { BicepsFlexed, Blend, Clapperboard, Code, Gamepad2, Music, Smile } from "lucide-react";
+import { cn } from '@/lib/utils';
+import { AnimatedBeam } from '@/components/magicui/animated-beam';
+import {
+  BicepsFlexed,
+  Blend,
+  Clapperboard,
+  Code,
+  Gamepad2,
+  Music,
+  Smile
+} from 'lucide-react';
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -14,8 +22,8 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
-        className,
+        'z-10 flex size-12 items-center justify-center rounded-full border-2 border-border bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]',
+        className
       )}
     >
       {children}
@@ -23,10 +31,10 @@ const Circle = forwardRef<
   );
 });
 
-Circle.displayName = "Circle";
+Circle.displayName = 'Circle';
 
 export function AnimatedBeamMultipleOutputDemo({
-  className,
+  className
 }: {
   className?: string;
 }) {
@@ -42,13 +50,13 @@ export function AnimatedBeamMultipleOutputDemo({
   return (
     <div
       className={cn(
-        "relative flex h-full w-full items-center justify-end overflow-hidden rounded-lg border bg-background p-2 md:p-10 md:shadow-xl",
-        className,
+        'relative flex h-full w-full items-center justify-end overflow-hidden rounded-lg border bg-background p-5 md:p-10 md:shadow-xl',
+        className
       )}
       ref={containerRef}
     >
-      <div className="flex size-full flex-row items-stretch justify-between gap-10 max-w-lg">
-        <div className="flex flex-col justify-center gap-2">
+      <div className='flex size-full max-w-lg flex-row items-stretch justify-between gap-10'>
+        <div className='flex flex-col justify-center gap-2'>
           <Circle ref={div1Ref}>
             <BicepsFlexed />
           </Circle>
@@ -65,12 +73,12 @@ export function AnimatedBeamMultipleOutputDemo({
             <Music />
           </Circle>
         </div>
-        <div className="flex flex-col justify-center">
-          <Circle ref={div6Ref} className="size-16">
+        <div className='flex flex-col justify-center'>
+          <Circle ref={div6Ref} className='size-16'>
             <Blend />
           </Circle>
         </div>
-        <div className="flex flex-col justify-center">
+        <div className='flex flex-col justify-center'>
           <Circle ref={div7Ref}>
             <Smile />
           </Circle>
