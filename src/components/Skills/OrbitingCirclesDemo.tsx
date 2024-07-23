@@ -15,10 +15,10 @@ export function OrbitingCirclesDemo() {
   const innerCircleLogos: IconKey[] = ['SiJavascript', 'SiHtml5', 'SiCss3'];
 
   return (
-    <div className='relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg'>
-      <span className='pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black'>
+    <div className='relative flex h-[40svh] w-full flex-col items-center justify-center overflow-hidden rounded-lg sm:h-[70svh]'>
+      {/* <span className='pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-base font-semibold leading-none text-transparent dark:from-white dark:to-black md:text-8xl'>
         Circles
-      </span>
+      </span> */}
 
       {/* Inner Circles */}
       {innerCircleLogos.map((logo, index) => {
@@ -26,10 +26,10 @@ export function OrbitingCirclesDemo() {
         return (
           <OrbitingCircles
             key={index}
-            className='z-30 size-[30px] border-none bg-transparent'
+            className='z-30 border-none bg-transparent'
             duration={20}
             delay={12 * index}
-            radius={80}
+            radius={0.1} // Adjusted to scaling factor
           >
             <IconComponent color='default' className='relative z-30' />
           </OrbitingCircles>
@@ -38,8 +38,8 @@ export function OrbitingCirclesDemo() {
 
       {/* Outer Circles (reverse) */}
       <OrbitingCircles
-        className='size-[50px] border-none bg-transparent'
-        radius={190}
+        className='border-none bg-transparent'
+        radius={0.25} // Adjusted to scaling factor
         duration={20}
         reverse
       >
@@ -47,8 +47,8 @@ export function OrbitingCirclesDemo() {
       </OrbitingCircles>
 
       <OrbitingCircles
-        className='size-[50px] border-none bg-transparent'
-        radius={190}
+        className='border-none bg-transparent'
+        radius={0.25} // Adjusted to scaling factor
         duration={20}
         delay={20}
         reverse
@@ -57,8 +57,8 @@ export function OrbitingCirclesDemo() {
       </OrbitingCircles>
 
       <OrbitingCircles
-        className='size-[50px] border-none bg-transparent'
-        radius={250}
+        className='border-none bg-transparent'
+        radius={0.3} // Adjusted to scaling factor
         duration={20}
         delay={20}
         reverse

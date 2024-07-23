@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
 export interface OrbitingCirclesProps {
@@ -6,7 +7,7 @@ export interface OrbitingCirclesProps {
   reverse?: boolean;
   duration?: number;
   delay?: number;
-  radius?: number;
+  radius?: number; // Now treated as a scaling factor
   path?: boolean;
 }
 
@@ -16,9 +17,24 @@ export default function OrbitingCircles({
   reverse,
   duration = 20,
   delay = 10,
-  radius = 50,
+  radius = 0.1, // Default scaling factor
   path = true
 }: OrbitingCirclesProps) {
+  const [computedRadius, setComputedRadius] = useState(50);
+
+  useEffect(() => {
+    const updateRadius = () => {
+      const newRadius =
+        Math.min(window.innerWidth, window.innerHeight) * radius;
+      setComputedRadius(newRadius);
+    };
+
+    updateRadius(); // Set the initial radius
+    window.addEventListener('resize', updateRadius);
+
+    return () => window.removeEventListener('resize', updateRadius);
+  }, [radius]);
+
   return (
     <>
       {path && (
@@ -31,7 +47,7 @@ export default function OrbitingCircles({
             className='stroke-white/60 stroke-1'
             cx='50%'
             cy='50%'
-            r={radius}
+            r={computedRadius}
             fill='none'
           />
         </svg>
@@ -41,12 +57,12 @@ export default function OrbitingCircles({
         style={
           {
             '--duration': duration,
-            '--radius': radius,
+            '--radius': computedRadius,
             '--delay': -delay
           } as React.CSSProperties
         }
         className={cn(
-          'animate-orbit absolute flex size-full transform-gpu items-center justify-center rounded-full border bg-black/10 [animation-delay:calc(var(--delay)*1000ms)] dark:bg-white/10',
+          'absolute flex size-full transform-gpu animate-orbit items-center justify-center rounded-full border bg-black/10 [animation-delay:calc(var(--delay)*1000ms)] dark:bg-white/10',
           { '[animation-direction:reverse]': reverse },
           className
         )}

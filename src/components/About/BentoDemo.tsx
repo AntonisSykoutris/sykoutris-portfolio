@@ -5,7 +5,7 @@ import { Share2Icon, GraduationCap } from 'lucide-react';
 import { HeroHighlight, Highlight } from '../ui/hero-highlight';
 
 import { BentoCard, BentoGrid } from '@/components/magicui/bento-grid';
-import { AnimatedBeamMultipleOutputDemo } from './AnimatedBeamsDemo';
+import { AnimatedBeamMultipleOutputDemo } from '../Skills/AnimatedBeamsDemo';
 import Globe from '../magicui/globe';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -15,7 +15,7 @@ const features = [
     name: '',
     description: '',
     href: '#',
-    className: 'col-span-3 lg:col-span-1',
+    className: 'col-span-3 xl:col-span-1',
     background: (
       <Image
         className='transition-all duration-300 ease-out hover:scale-105'
@@ -31,7 +31,7 @@ const features = [
     name: 'Who am I?',
     description: 'Something to know me better.',
     href: '#',
-    className: 'col-span-3 lg:col-span-2',
+    className: 'col-span-3 xl:col-span-2',
     background: (
       <div className='absolute mx-auto h-full w-full px-4 pt-4 font-normal'>
         <HeroHighlight>
@@ -48,7 +48,7 @@ const features = [
               duration: 0.5,
               ease: [0.4, 0.0, 0.2, 1]
             }}
-            className='mx-auto mt-0 max-w-4xl text-base font-bold leading-relaxed text-neutral-700 dark:text-white md:px-4 md:text-xl lg:text-2xl lg:leading-snug'
+            className='mx-auto mt-0 max-w-4xl text-base font-bold leading-relaxed text-neutral-700 dark:text-white md:px-4 md:text-xl lg:leading-snug 2xl:text-2xl'
           >
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex ipsum
             quisquam ullam veritatis animi quo est aliquid sit, quos molestias,
@@ -67,7 +67,7 @@ const features = [
     name: 'Activities',
     description: 'Activities beyond work bring joy.',
     href: '#',
-    className: 'col-span-3 lg:col-span-2',
+    className: 'col-span-3 xl:col-span-2',
     background: (
       <AnimatedBeamMultipleOutputDemo className='absolute right-2 top-4 h-full w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105' />
     )
@@ -76,7 +76,7 @@ const features = [
     Icon: GlobeIcon,
     name: 'Globe',
     description: "I'm very flexible with time zone communications",
-    className: 'col-span-3 lg:col-span-1',
+    className: 'col-span-3 xl:col-span-1',
     href: '#',
     background: (
       <>

@@ -3,7 +3,7 @@
 import React from 'react';
 import Section from '../General/Section';
 import SectionTitle from '../General/SectionTitle';
-import { BentoDemo } from './BentoDemo';
+import { BentoDemo } from '../About/BentoDemo';
 import { CanvasRevealEffectDemo2 } from './CanvasRevealEffectDemo2';
 import { OrbitingCirclesDemo } from './OrbitingCirclesDemo';
 
