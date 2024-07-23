@@ -92,7 +92,7 @@ const features = [
           duration: 0.5,
           ease: [0.4, 0.0, 0.2, 1],
         }}
-        className="text-base px-4 mt-0 md:text-xl lg:text-2xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug mx-auto "
+        className="text-base md:px-4 mt-0 md:text-xl lg:text-2xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug mx-auto "
       >
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex ipsum quisquam ullam veritatis animi quo est aliquid sit, quos molestias, architecto excepturi necessitatibus molestiae facere quis quibusdam perspiciatis, accusamus
         <Highlight className="text-black dark:text-white">
@@ -122,7 +122,7 @@ const features = [
     href: "#",
     background: (
       <>
-        <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text:4xl md:text-8xl font-semibold justify-center z-50 pt-5 relative flex  leading-none text-transparent dark:from-white dark:to-slate-900/10">
+        <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-6xl md:text-8xl font-semibold justify-center z-50 pt-5 relative flex  leading-none text-transparent dark:from-white dark:to-slate-900/10">
         Globe
       </span>
        <Globe className="lg:top-28 absolute max-sm:top-3/4 left-1/2 transform -translate-x-1/2 max-sm:-translate-y-1/2  h-fit" />

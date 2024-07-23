@@ -26,7 +26,7 @@ function Section({ children, id, className, customPaddings, leftTopCross = false
       )}
       id={id}
     >
-      <motion.div className={cn('relative h-full w-full px-8 py-10 lg:py-14 ', customPaddings)}>{children}</motion.div>
+      <motion.div className={cn('relative h-full w-full px-2 md:px-8 py-10 lg:py-14 ', customPaddings)}>{children}</motion.div>
 
       {leftTopCross ? (
         <div className='absolute left-[-1px] top-[-1px] h-3.5 w-3.5 rotate-0 border-l border-t border-[#e6e6e6]'></div>
