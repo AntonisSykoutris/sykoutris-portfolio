@@ -49,7 +49,7 @@ export function OrbitingCirclesDemo() {
             className='z-20 border-none bg-transparent'
             duration={ORBIT_DURATION}
             delay={FRONTEND_INTERVAL_DELAY * index}
-            radius={0.25} // Adjusted to scaling factor
+            radius={0.23} // Adjusted to scaling factor
             reverse
           >
             <IconComponent

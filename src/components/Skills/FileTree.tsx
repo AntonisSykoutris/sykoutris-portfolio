@@ -19,7 +19,7 @@ export default function FileTree({}: Props) {
   };
 
   return (
-    <div className='relative z-30 flex flex-col items-center justify-center self-center overflow-hidden rounded-lg border md:shadow-xl'>
+    <div className='relative z-10 flex flex-col items-center justify-center self-center overflow-hidden rounded-lg border md:shadow-xl'>
       <Tree
         className='overflow-hidden rounded-md bg-white p-2 [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]'
         initialExpandedItems={['1', '2']}
