@@ -13,8 +13,8 @@ export function CanvasRevealEffectDemo2() {
         <Card
           title='Frontend Developer'
           icon={
-            // <DotLottieReact src='/frontend.lottie' loop autoplay speed={0.5} />
-            <SiReactbootstrap color='default' />
+            <DotLottieReact src='/frontend.lottie' loop autoplay speed={0.5} />
+            // <SiReactbootstrap color='default' />
           }
         >
           <CanvasRevealEffect
