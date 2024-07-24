@@ -4,6 +4,7 @@ import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CanvasRevealEffect } from '@/components/ui/canvas-reveal-effect';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { SiReactbootstrap } from '@icons-pack/react-simple-icons';
 
 export function CanvasRevealEffectDemo2() {
   return (
@@ -12,12 +13,8 @@ export function CanvasRevealEffectDemo2() {
         <Card
           title='Frontend Developer'
           icon={
-            <DotLottieReact
-              src='/frontend.lottie'
-              loop
-              playOnHover
-              speed={0.5}
-            />
+            // <DotLottieReact src='/frontend.lottie' loop autoplay speed={0.5} />
+            <SiReactbootstrap color='default' />
           }
         >
           <CanvasRevealEffect
@@ -28,12 +25,7 @@ export function CanvasRevealEffectDemo2() {
         <Card
           title='Backend Developer'
           icon={
-            <DotLottieReact
-              src='/backend.lottie'
-              loop
-              playOnHover
-              speed={0.5}
-            />
+            <DotLottieReact src='/backend.lottie' loop autoplay speed={0.5} />
           }
         >
           <CanvasRevealEffect
@@ -51,12 +43,7 @@ export function CanvasRevealEffectDemo2() {
         <Card
           title='UI/UX Designer'
           icon={
-            <DotLottieReact
-              src='/designer.lottie'
-              loop
-              playOnHover
-              speed={0.5}
-            />
+            <DotLottieReact src='/designer.lottie' loop autoplay speed={0.5} />
           }
         >
           <CanvasRevealEffect
