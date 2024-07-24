@@ -1,4 +1,31 @@
-import { SiJavascript, SiHtml5, SiCss3 } from '@icons-pack/react-simple-icons';
+import FramerMotionIcon from '@/components/Skills/FramerMotionIcon';
+import {
+  SiJavascript,
+  SiTypescript,
+  SiHtml5,
+  SiCss3,
+  SiSass,
+  SiBootstrap,
+  SiTailwindcss,
+  SiReact,
+  SiNextdotjs,
+  SiAngular,
+  SiNodedotjs,
+  SiSharp,
+  SiDotnet,
+  SiSpringboot,
+  SiMongodb,
+  SiMysql,
+  SiFirebase,
+  SiGit,
+  SiPostman,
+  SiVisualstudiocode,
+  SiVisualstudio,
+  SiFigma,
+  SiFramer,
+  SiThreedotjs,
+  SiAdobephotoshop
+} from '@icons-pack/react-simple-icons';
 
 export const MOTION_SLIDE_DEFAULT_DELAY = 0.5;
 
@@ -187,17 +214,136 @@ export const gridItems = [
   }
 ];
 
-export type FrontendIconKey = 'SiJavascript' | 'SiHtml5' | 'SiCss3';
+export type FrontendIconKey =
+  | 'SiJavascript'
+  | 'SiTypescript'
+  | 'SiHtml5'
+  | 'SiCss3'
+  | 'SiSass'
+  | 'SiBootstrap'
+  | 'SiTailwindcss'
+  | 'SiReact'
+  | 'SiAngular'
+  | 'SiNextjs';
 
 // Mapping of icon names to components
 export const frontendIconMapping = {
   SiJavascript: SiJavascript,
+  SiTypescript: SiTypescript,
   SiHtml5: SiHtml5,
-  SiCss3: SiCss3
+  SiCss3: SiCss3,
+  SiSass: SiSass,
+  SiBootstrap: SiBootstrap,
+  SiTailwindcss: SiTailwindcss,
+  SiReact: SiReact,
+  SiAngular: SiAngular,
+  SiNextjs: SiNextdotjs
 };
 
-export const frontEndLogos: FrontendIconKey[] = [
+export const frontendLogos: FrontendIconKey[] = [
   'SiJavascript',
+  'SiTypescript',
   'SiHtml5',
-  'SiCss3'
+  'SiCss3',
+  'SiSass',
+  'SiTailwindcss',
+  'SiReact',
+  'SiAngular',
+  'SiNextjs'
 ];
+
+export type BackendIconKey =
+  | 'SiNodejs'
+  | 'SiSharp'
+  | 'SiDotnet'
+  | 'SiSpringboot'
+  | 'SiMongodb'
+  | 'SiMysql'
+  | 'SiFirebase';
+
+// Mapping of icon names to components
+export const BackendIconMapping = {
+  SiNodejs: SiNodedotjs,
+  SiSharp: SiSharp,
+  SiDotnet: SiDotnet,
+  SiSpringboot: SiSpringboot,
+  SiMongodb: SiMongodb,
+  SiMysql: SiMysql,
+  SiFirebase: SiFirebase
+};
+
+export const backendLogos: BackendIconKey[] = [
+  'SiNodejs',
+  'SiSharp',
+  'SiDotnet',
+  'SiSpringboot',
+  'SiMongodb',
+  'SiMysql',
+  'SiFirebase'
+];
+
+export const BackendIconKey: BackendIconKey[] = [
+  'SiNodejs',
+  'SiSharp',
+  'SiDotnet',
+  'SiMongodb',
+  'SiMysql',
+  'SiFirebase'
+];
+
+export type ToolsIconKey =
+  | 'SiGit'
+  | 'SiPostman'
+  | 'SiVisualstudiocode'
+  | 'SiVisualstudio'
+  | 'SiFigma'
+  | 'SiFramer'
+  | 'SiFramerMotion'
+  | 'SiThreejs'
+  | 'SiAdobephotoshop';
+
+// Mapping of icon names to components
+export const ToolsIconMapping = {
+  SiGit: SiGit,
+  SiPostman: SiPostman,
+  SiVisualstudiocode: SiVisualstudiocode,
+  SiVisualstudio: SiVisualstudio,
+  SiFigma: SiFigma,
+  SiFramer: SiFramer,
+  SiFramerMotion: FramerMotionIcon,
+  SiThreejs: SiThreedotjs,
+  SiAdobephotoshop: SiAdobephotoshop
+};
+
+export const toolsLogos: ToolsIconKey[] = [
+  'SiGit',
+  'SiPostman',
+  'SiVisualstudiocode',
+  'SiVisualstudio',
+  'SiFigma',
+  'SiFramer',
+  'SiFramerMotion',
+  'SiThreejs',
+  'SiAdobephotoshop'
+];
+
+export const ToolsIconKey: ToolsIconKey[] = [
+  'SiGit',
+  'SiPostman',
+  'SiVisualstudiocode',
+  'SiVisualstudio',
+  'SiFigma',
+  'SiFramer',
+  'SiFramerMotion',
+  'SiThreejs',
+  'SiAdobephotoshop'
+];
+
+export const FRONTEND_TOTAL_LOGOS = frontendLogos.length;
+export const BACKEND_TOTAL_LOGOS = backendLogos.length;
+export const TOOLS_TOTAL_LOGOS = toolsLogos.length;
+
+export const ORBIT_DURATION = 20; // Total duration for one complete orbit
+export const FRONTEND_INTERVAL_DELAY = ORBIT_DURATION / FRONTEND_TOTAL_LOGOS; // Interval delay for each logo
+export const BACKEND_INTERVAL_DELAY = ORBIT_DURATION / BACKEND_TOTAL_LOGOS; // Interval delay for each logo
+export const TOOLS_INTERVAL_DELAY = ORBIT_DURATION / TOOLS_TOTAL_LOGOS; // Interval delay for each logo

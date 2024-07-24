@@ -312,7 +312,7 @@ const File = forwardRef<
     return (
       <AccordionPrimitive.Item
         value={value}
-        className='relative rounded-md p-2 hover:bg-gray-100'
+        className={`relative rounded-md p-2 ${isSelectable ? 'hover:bg-gray-100' : ''} `}
       >
         <AccordionPrimitive.Trigger
           ref={ref}

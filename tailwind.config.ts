@@ -19,10 +19,14 @@ const config = {
       center: true,
       padding: '2rem',
       screens: {
-        '2xl': '1400px'
+        '2xl': '1400px',
+        '3xl': '1600px'
       }
     },
     extend: {
+      screens: {
+        '3xl': '1600px' // Ensure '3xl' is defined here as well
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
