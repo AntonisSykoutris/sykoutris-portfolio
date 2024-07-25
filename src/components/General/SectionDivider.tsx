@@ -3,12 +3,13 @@ import React from 'react';
 
 type Props = {
   className?: string;
+  id?: string;
 };
 
-export default function SectionDivider({ className }: Props) {
+export default function SectionDivider({ className, id }: Props) {
   return (
-    <div className={cn('section-divider  w-fit', className)}>
-      <div className='divider-line  '></div>
+    <div id={id} className={cn('section-divider w-fit', className)}>
+      <div className='divider-line'></div>
     </div>
   );
 }

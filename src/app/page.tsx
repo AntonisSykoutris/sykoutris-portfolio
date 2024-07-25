@@ -5,6 +5,7 @@ import SectionDivider from '@/components/General/SectionDivider';
 import Hero from '@/components/Hero/Hero';
 import About from '@/components/About/About';
 import Skills from '@/components/Skills/Skills';
+import Projects from '@/components/Projects/Projects';
 
 export default function Home() {
   return (
@@ -13,13 +14,14 @@ export default function Home() {
         ...framerMotionConfig
       }}
     >
-      <SectionDivider />
+      <SectionDivider id='home_section' />
       <Hero />
-      <SectionDivider />
+      <SectionDivider id='about_section' />
       <About />
-      <SectionDivider />
+      <SectionDivider id='skills_section' />
       <Skills />
-      <SectionDivider />
+      <SectionDivider id='projects_section' />
+      <Projects />
     </MotionConfig>
   );
 }

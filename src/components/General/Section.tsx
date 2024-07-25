@@ -27,7 +27,7 @@ function Section({
   return (
     <motion.section
       className={cn(
-        `relative z-50 mx-auto flex h-screen w-full flex-col items-start justify-center border border-b-0 border-t-0 border-[#e6e6e6]`,
+        `mx-auto flex h-screen w-full flex-col items-start justify-center border border-b-0 border-t-0 border-[#e6e6e6]`,
         className
       )}
       id={id}
@@ -42,7 +42,7 @@ function Section({
       </motion.div>
 
       {leftTopCross ? (
-        <div className='absolute left-[-1px] top-[-1px] z-30 h-3.5 w-3.5 rotate-0 border-l border-t border-[#ff3838]'></div>
+        <div className='absolute left-[-1px] top-[-1px] z-30 h-3.5 w-3.5 rotate-0 border-l border-t border-[#e6e6e6]'></div>
       ) : (
         <></>
       )}
