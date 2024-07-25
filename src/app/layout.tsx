@@ -29,9 +29,16 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang='en'>
+      <title>Sykoutris Antonis Portfolio</title>
+      <meta
+        name='description'
+        content={
+          "Welcome to the portfolio of Sykoutris Antonis, a versatile full-stack developer with a keen eye for front-end design and innovation. Explore my projects, showcasing expertise in creating dynamic, user-friendly web applications that seamlessly blend aesthetics with functionality. Discover the fusion of technology and creativity in every project. Let's build something remarkable together!"
+        }
+      />
       <meta
         name='viewport'
-        content='width=device-width, initial-scale=1.0, user-scalable=no'
+        content='width=device-width, initial-scale=1.0, maximum-scale=5.0'
       />
       <body>
         <SmoothScroll>
