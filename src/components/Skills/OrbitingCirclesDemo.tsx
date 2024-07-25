@@ -11,11 +11,10 @@ import {
   ToolsIconMapping,
   TOOLS_INTERVAL_DELAY
 } from '@/lib/data';
-import { TbBrandFramerMotion } from 'react-icons/tb';
 
 export function OrbitingCirclesDemo() {
   return (
-    <div className='relative flex h-[40svh] w-full flex-col items-center justify-center overflow-hidden rounded-lg sm:h-[70svh]'>
+    <div className='relative flex h-[65svh] w-full flex-col items-center justify-center overflow-hidden rounded-lg sm:h-[80svh]'>
       <span className='pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-base font-semibold leading-none text-transparent dark:from-white dark:to-black md:text-8xl'>
         STACK
       </span>
@@ -27,7 +26,7 @@ export function OrbitingCirclesDemo() {
           <OrbitingCircles
             key={index}
             className='border-none bg-transparent'
-            radius={0.1} // Adjusted to scaling factor
+            radius={0.15} // Adjusted to scaling factor
             duration={ORBIT_DURATION}
             delay={BACKEND_INTERVAL_DELAY * index}
           >
@@ -49,7 +48,7 @@ export function OrbitingCirclesDemo() {
             className='z-20 border-none bg-transparent'
             duration={ORBIT_DURATION}
             delay={FRONTEND_INTERVAL_DELAY * index}
-            radius={0.22} // Adjusted to scaling factor
+            radius={0.25} // Adjusted to scaling factor
             reverse
           >
             <IconComponent
@@ -75,7 +74,7 @@ export function OrbitingCirclesDemo() {
             className='z-20 border-none bg-transparent'
             duration={ORBIT_DURATION}
             delay={TOOLS_INTERVAL_DELAY * index}
-            radius={0.3} // Adjusted to scaling factor
+            radius={0.35} // Adjusted to scaling factor
             reverse
           >
             <IconComponent

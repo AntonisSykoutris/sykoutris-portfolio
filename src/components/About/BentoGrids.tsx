@@ -10,7 +10,7 @@ import Globe from '../magicui/globe';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const features = [
+const gridItems = [
   {
     name: '',
     description: '',
@@ -89,11 +89,11 @@ const features = [
   }
 ];
 
-export function BentoDemo() {
+export function BentoGrids() {
   return (
     <BentoGrid>
-      {features.map((feature, idx) => (
-        <BentoCard key={idx} {...feature} />
+      {gridItems.map((item, idx) => (
+        <BentoCard key={idx} {...item} />
       ))}
     </BentoGrid>
   );
