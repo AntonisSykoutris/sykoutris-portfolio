@@ -43,7 +43,7 @@ export default function RootLayout({ children }: Props) {
       <body>
         <SmoothScroll>
           <Navbar />
-          <main className='mx-auto flex w-[95svw] flex-col items-center md:w-[70svw] lg:w-[60svw]'>
+          <main className='mx-auto flex w-[95svw] flex-col items-center md:w-[90svw] xl:w-[60svw]'>
             {children}
           </main>
           <Footer />

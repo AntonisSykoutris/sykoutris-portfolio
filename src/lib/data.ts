@@ -287,7 +287,7 @@ export const TOOLS_INTERVAL_DELAY = ORBIT_DURATION / TOOLS_TOTAL_LOGOS; // Inter
 
 export const projectsData = [
   {
-    title: 'CorpComment',
+    title: 'Sykoutris Wines',
     description:
       'I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.',
     tags: ['React', 'Next.js', 'MongoDB', 'Tailwind', 'Prisma'],
