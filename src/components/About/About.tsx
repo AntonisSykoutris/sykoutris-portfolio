@@ -9,7 +9,7 @@ type Props = {};
 
 export default function About({}: Props) {
   return (
-    <Section className='h-fit overflow-x-hidden'>
+    <Section id='about_section' className='h-fit overflow-x-hidden'>
       <SectionTitle title='ABOUT ME' subtitle='Introduction' />
       <BentoGrids />
     </Section>

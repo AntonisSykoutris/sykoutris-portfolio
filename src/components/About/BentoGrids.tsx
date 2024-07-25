@@ -22,7 +22,7 @@ const gridItems = [
         src={'/test.png'}
         alt={'derr'}
         objectFit='contain'
-        layout='fill'
+        fill
       />
     )
   },

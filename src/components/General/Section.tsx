@@ -14,48 +14,57 @@ type Props = {
   rightBottomCross?: boolean;
 };
 
-function Section({ children, id, className, customPaddings, leftTopCross = false, rightTopCross = false, leftBottomCross = false, rightBottomCross = false }: Props) {
+function Section({
+  children,
+  id,
+  className,
+  customPaddings,
+  leftTopCross = false,
+  rightTopCross = false,
+  leftBottomCross = false,
+  rightBottomCross = false
+}: Props) {
   return (
-         <motion.section
+    <motion.section
       className={cn(
-        `
-      mx-auto flex h-screen w-full flex-col items-start
-     justify-center border border-b-0 border-t-0 border-[#e6e6e6]
-      `,
+        `relative z-50 mx-auto flex h-screen w-full flex-col items-start justify-center border border-b-0 border-t-0 border-[#e6e6e6]`,
         className
       )}
       id={id}
     >
-      <motion.div className={cn('relative h-full w-full px-2 md:px-8 py-10 lg:py-14 ', customPaddings)}>{children}</motion.div>
+      <motion.div
+        className={cn(
+          'relative h-full w-full px-2 py-10 md:px-8 lg:py-14',
+          customPaddings
+        )}
+      >
+        {children}
+      </motion.div>
 
       {leftTopCross ? (
-        <div className='absolute left-[-1px] top-[-1px] h-3.5 w-3.5 rotate-0 border-l border-t border-[#e6e6e6]'></div>
+        <div className='absolute left-[-1px] top-[-1px] z-30 h-3.5 w-3.5 rotate-0 border-l border-t border-[#ff3838]'></div>
       ) : (
         <></>
       )}
 
       {rightTopCross ? (
-        <div className='absolute right-[-1px] top-[-1px] h-3.5 w-3.5 rotate-90 border-l  border-t border-[#e6e6e6]'></div>
+        <div className='absolute right-[-1px] top-[-1px] h-3.5 w-3.5 rotate-90 border-l border-t border-[#e6e6e6]'></div>
       ) : (
         <></>
       )}
 
-
-{leftBottomCross ? (
-      <div className='absolute bottom-[-1px] left-[-1px] h-3.5 w-3.5 -rotate-90 border-l border-t border-[#e6e6e6]'></div>
+      {leftBottomCross ? (
+        <div className='absolute bottom-[-1px] left-[-1px] h-3.5 w-3.5 -rotate-90 border-l border-t border-[#e6e6e6]'></div>
       ) : (
         <></>
       )}
 
-{rightBottomCross ? (
-      <div className='absolute bottom-[-1px] right-[-1px] h-3.5 w-3.5 rotate-180 border-l border-t border-[#e6e6e6]'></div>
+      {rightBottomCross ? (
+        <div className='absolute bottom-[-1px] right-[-1px] h-3.5 w-3.5 rotate-180 border-l border-t border-[#e6e6e6]'></div>
       ) : (
         <></>
       )}
-
-
     </motion.section>
- 
   );
 }
 

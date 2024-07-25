@@ -13,6 +13,7 @@ export default function Hero({}: Props) {
   return (
     <>
       <Section
+        id='home_section'
         leftTopCross
         rightTopCross
         customPaddings='p-0 lg:py-1 lg:py-0'

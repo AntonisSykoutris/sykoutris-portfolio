@@ -1,5 +1,5 @@
 'use client';
-import {  MotionConfig } from 'framer-motion';
+import { MotionConfig } from 'framer-motion';
 import { framerMotionConfig } from '@/lib/utils';
 import SectionDivider from '@/components/General/SectionDivider';
 import Hero from '@/components/Hero/Hero';
@@ -10,15 +10,16 @@ export default function Home() {
   return (
     <MotionConfig
       transition={{
-        ...framerMotionConfig,
+        ...framerMotionConfig
       }}
     >
-    <SectionDivider />
-    <Hero/>
-    <SectionDivider />
-    <About/>
-    <SectionDivider />
-    <Skills/>
+      <SectionDivider />
+      <Hero />
+      <SectionDivider />
+      <About />
+      <SectionDivider />
+      <Skills />
+      <SectionDivider />
     </MotionConfig>
   );
 }
