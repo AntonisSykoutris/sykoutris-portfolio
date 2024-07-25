@@ -13,8 +13,6 @@ export default function Hero({}: Props) {
   return (
     <>
       <Section
-        leftTopCross
-        rightTopCross
         customPaddings='p-0 lg:py-1 lg:py-0'
         className='bg-dot-black/[0.2] relative z-10 flex h-[100vh] items-center justify-center overflow-hidden align-middle sm:h-[80vh]'
       >

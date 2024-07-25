@@ -27,7 +27,7 @@ function Section({
   return (
     <motion.section
       className={cn(
-        `mx-auto flex h-screen w-full flex-col items-start justify-center border border-b-0 border-t-0 border-[#e6e6e6]`,
+        `relative z-20 mx-auto flex h-screen w-full flex-col items-start justify-center border border-b-0 border-t-0 border-[#e6e6e6]`,
         className
       )}
       id={id}
