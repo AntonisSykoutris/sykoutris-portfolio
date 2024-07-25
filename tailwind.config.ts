@@ -20,12 +20,12 @@ const config = {
       padding: '2rem',
       screens: {
         '2xl': '1400px',
-        '3xl': '1900px'
+        '3xl': '2100px'
       }
     },
     extend: {
       screens: {
-        '3xl': '1900px' // Ensure '3xl' is defined here as well
+        '3xl': '2100px' // Ensure '3xl' is defined here as well
       },
       colors: {
         border: 'hsl(var(--border))',
