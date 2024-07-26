@@ -17,11 +17,13 @@ export default function Projects({}: Props) {
       className='h-fit overflow-x-hidden'
     >
       <SectionTitle title='PROJECTS' subtitle='WHAT I HAVE DONE SO FAR' />
-      {projectsData.map((project, index) => (
-        <React.Fragment key={index}>
-          <Project {...project} />
-        </React.Fragment>
-      ))}
+      <div className='grid grid-cols-1 gap-4 3xl:grid-cols-2'>
+        {projectsData.map((project, index) => (
+          <React.Fragment key={index}>
+            <Project {...project} />
+          </React.Fragment>
+        ))}
+      </div>
     </Section>
   );
 }

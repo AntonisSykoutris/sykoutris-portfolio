@@ -50,13 +50,15 @@ const gridItems = [
             }}
             className='mx-auto mt-0 max-w-4xl text-base font-bold leading-relaxed text-neutral-700 dark:text-white md:px-4 md:text-xl lg:leading-snug 2xl:text-2xl'
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex ipsum
-            quisquam ullam veritatis animi quo est aliquid sit, quos molestias,
-            architecto excepturi necessitatibus molestiae facere quis quibusdam
-            perspiciatis, accusamus
+            Hi, I&apos;m Antonis, a passionate Full Stack Developer based in
+            Greece with a strong focus on front-end development and design. I
+            specialize in creating visually appealing, user-friendly web
+            applications using technologies like HTML, CSS, JavaScript, and
+            React. Let&apos;s
             <Highlight className='text-black dark:text-white'>
-              Important.
+              connect
             </Highlight>
+            and create something amazing together!
           </motion.h1>
         </HeroHighlight>
       </div>
