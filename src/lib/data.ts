@@ -114,11 +114,11 @@ export const navItems = [
   {
     title: 'Experience',
     href: 'experiance_section'
-  },
-  {
-    title: 'Contact',
-    href: 'contact_section'
   }
+  // {
+  //   title: 'Contact',
+  //   href: 'contact_section'
+  // }
 ];
 
 export const heroData = {

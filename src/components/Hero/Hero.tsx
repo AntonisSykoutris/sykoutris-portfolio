@@ -5,7 +5,6 @@ import { ImgToParticles } from 'image-to-particles';
 import React from 'react';
 import Section from '../General/Section';
 import HeroText from './HeroText';
-import AnimatedTextUnderlign from './AnimatedDrawing';
 
 type Props = {};
 
