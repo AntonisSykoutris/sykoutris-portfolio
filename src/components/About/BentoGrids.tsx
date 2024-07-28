@@ -1,6 +1,6 @@
 'use client';
 
-import { GlobeIcon, FileTextIcon } from '@radix-ui/react-icons';
+import { GlobeIcon } from '@radix-ui/react-icons';
 import { Share2Icon, GraduationCap } from 'lucide-react';
 import { HeroHighlight, Highlight } from '../ui/hero-highlight';
 
@@ -19,7 +19,7 @@ const gridItems = [
     background: (
       <Image
         className='transition-all duration-300 ease-out hover:scale-105'
-        src={'/test.png'}
+        src={'/about/test.png'}
         alt={'derr'}
         objectFit='contain'
         fill
@@ -52,13 +52,12 @@ const gridItems = [
           >
             Hi, I&apos;m Antonis, a passionate Full Stack Developer based in
             Greece with a strong focus on front-end development and design. I
-            specialize in creating visually appealing, user-friendly web
-            applications using technologies like HTML, CSS, JavaScript, and
-            React. Let&apos;s
+            specialize in creating
             <Highlight className='text-black dark:text-white'>
-              connect
+              visually appealing
             </Highlight>
-            and create something amazing together!
+            , user-friendly web applications using technologies like HTML, CSS,
+            JavaScript, and React.
           </motion.h1>
         </HeroHighlight>
       </div>

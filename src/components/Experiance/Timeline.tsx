@@ -31,11 +31,12 @@ export default function Timeline() {
                 padding: '1.3rem 2rem'
               }}
               contentArrowStyle={{
-                borderRight: '0.4rem solid #9ca3af'
+                borderRight: '0.4rem solid #f3f4f6'
               }}
               visible={inView}
+              dateClassName='text-primary'
               date={item.date}
-              icon={<item.icon />}
+              icon={<item.icon color='default' />}
               iconStyle={{
                 background: 'white',
                 fontSize: '1.5rem'
@@ -43,7 +44,7 @@ export default function Timeline() {
             >
               <h3 className='font-semibold capitalize'>{item.title}</h3>
               <p className='!mt-0 font-normal'>{item.location}</p>
-              <p className='!mt-1 !font-normal text-gray-700'>
+              <p className='!mt-1 !font-normal text-foreground'>
                 {item.description}
               </p>
             </VerticalTimelineElement>

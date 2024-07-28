@@ -24,14 +24,16 @@ import {
   SiFigma,
   SiFramer,
   SiThreedotjs,
-  SiAdobephotoshop
+  SiAdobephotoshop,
+  SiWordpress
 } from '@icons-pack/react-simple-icons';
 
-import testImg from '/public/test.png';
-import wineImg from '/public/wine.png';
-import instaFlowImg from '/public/insta_flow.png';
-import roomiImg from '/public/roomi.png';
-import oldPortfolioImg from '/public/oldPortfolio.png';
+import testImg from '/public/about/test.png';
+import wineImg from '/public/projects/wine.webp';
+import followFinderImg from '/public/projects/followfinder.webp';
+import roomiImg from '/public/projects/roomi.webp';
+import oldPortfolioImg from '/public/projects/oldPortfolio.webp';
+import { LuBuilding, LuGraduationCap } from 'react-icons/lu';
 
 export const MOTION_SLIDE_DEFAULT_DELAY = 0.5;
 
@@ -294,55 +296,78 @@ export const projectsData = [
     title: 'Sykoutris Wines',
     description:
       'I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.',
-    tags: ['React', 'Next.js', 'MongoDB', 'Tailwind', 'Prisma'],
+    tags: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Tailwind',
+      'Framer Motion',
+      'Three.js'
+    ],
     imageUrl: wineImg
   },
   {
-    title: 'rmtDev',
+    title: 'FollowFinder',
     description:
-      'Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.',
-    tags: ['React', 'TypeScript', 'Next.js', 'Tailwind', 'Redux'],
-    imageUrl: instaFlowImg
+      'I developed a web app that analyzes follower data from JSON inputs, creating a list of mutual followers and identifying who follows you back.',
+    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Framer Motion'],
+    imageUrl: followFinderImg
   },
   {
-    title: 'Word Analytics',
+    title: 'Roomi',
     description:
-      'A public web app for quick analytics on text. It shows word count, character count and social media post limits.',
-    tags: ['React', 'Next.js', 'SQL', 'Tailwind', 'Framer'],
+      'A landing page for an Escape Room company. The page features immersive visuals and dynamic content to capture the excitement of the escape room experience.',
+    tags: ['HTML5', 'SASS', 'JavaScript'],
     imageUrl: roomiImg
   },
   {
     title: 'Old Portfolio',
     description:
-      'A public web app for quick analytics on text. It shows word count, character count and social media post limits.',
-    tags: ['React', 'Next.js', 'SQL', 'Tailwind', 'Framer'],
+      'My previous portfolio. It includes interactive features that demonstrate my ability to deliver high-quality work across various digital platforms.',
+    tags: ['HTML5', 'CSS', 'JavaScript'],
     imageUrl: oldPortfolioImg
   }
 ] as const;
 
 export const experiencesData = [
   {
-    title: 'Graduated bootcamp',
-    location: 'Miami, FL',
+    title: 'Front-End Developer',
+    location: 'Heraklion, Greece',
     description:
-      'I graduated after 6 months of studying. I immediately found a job as a front-end developer.',
-    icon: SiThreedotjs,
-    date: '2019'
+      "I worked in the field of front-end development for the AHI Carrier website, developing and improving the company's website.",
+    icon: SiWordpress,
+    date: 'Jan 2021 – Mar2021'
   },
   {
     title: 'Front-End Developer',
-    location: 'Orlando, FL',
+    location: 'Heraklion, Greece',
     description:
-      'I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.',
-    icon: SiThreedotjs,
-    date: '2019 - 2021'
+      "I worked as a front-end developer on the eCare-PCP website for the FORTH organization, improving the website's presentation and facilitating user navigation.",
+    icon: LuBuilding,
+    date: 'Mar 2022 – Jul 2022'
   },
   {
-    title: 'Full-Stack Developer',
-    location: 'Houston, TX',
+    title: 'Graduated University',
+    location: 'Heraklion, Greece',
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: SiThreedotjs,
-    date: '2021 - present'
+      "I worked as a front-end developer on the eCare-PCP website for the FORTH organization, improving the website's presentation and facilitating user navigation.",
+    icon: LuGraduationCap,
+    date: '2022'
+  },
+  {
+    title: 'React Native Developer',
+    location: 'Athens, Greece',
+    description:
+      'I designed and developed a point-of-sale system using React Native for a client in Naxos, which enabled easy management and export of data to Excel, providing a reliable and effective solution for my client.',
+    icon: SiReact,
+    date: 'Nov 2023 – Feb 2023'
+  },
+  {
+    title: 'Fullstack Developer',
+    location: 'Athens, Greece',
+    description:
+      'I am presently employed at IMPACT, INFORMATION SYSTEMS, A.E. as a Frontend Developer within the Invoicing Department. My role involves designing and implementing user interface solutions to enhance invoicing processes and improve user experience.',
+    icon: LuBuilding,
+    date: 'May 2023 – Present'
   }
 ] as const;
