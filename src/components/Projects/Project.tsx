@@ -27,7 +27,7 @@ export default function Project({ title, description, tags, imageUrl }: Props) {
       className='group mb-3 flex justify-center last:mb-0 sm:mb-8'
     >
       <section className='0 relative max-w-[42rem] overflow-hidden rounded-lg border border-black/5 bg-white transition [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] hover:bg-gray-100 sm:h-[20rem] sm:pr-8 sm:group-even:pl-8'>
-        <div className='flex h-full flex-col px-5 pb-7 pt-4 sm:max-w-[50%] sm:pl-10 sm:pr-2 sm:pt-10 sm:group-even:ml-[18rem]'>
+        <div className='flex h-full flex-col px-5 pb-7 pt-4 sm:max-w-[57%] sm:pl-10 sm:pr-2 sm:pt-10 sm:group-even:ml-[18rem]'>
           <h3 className='text-2xl font-semibold'>{title}</h3>
           <p className='mt-2 leading-relaxed text-foreground'>{description}</p>
           <ul className='mt-4 flex flex-wrap gap-2 sm:mt-auto'>

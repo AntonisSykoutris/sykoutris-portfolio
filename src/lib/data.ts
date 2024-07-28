@@ -295,7 +295,7 @@ export const projectsData = [
   {
     title: 'Sykoutris Wines',
     description:
-      'I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.',
+      'Sykoutris Wines offers an immersive virtual wine experience with sleek design and captivating visuals, showcasing my passion for exceptional web design.',
     tags: [
       'React',
       'Next.js',
@@ -350,7 +350,7 @@ export const experiencesData = [
     title: 'Graduated University',
     location: 'Heraklion, Greece',
     description:
-      "I worked as a front-end developer on the eCare-PCP website for the FORTH organization, improving the website's presentation and facilitating user navigation.",
+      'I proudly graduated from the University of Crete with a degree in Computer Science, where I developed a strong foundation in software development and computational theory. My education equipped me with the skills to tackle complex technical challenges and drive innovative solutions.',
     icon: LuGraduationCap,
     date: '2022'
   },
@@ -366,7 +366,7 @@ export const experiencesData = [
     title: 'Fullstack Developer',
     location: 'Athens, Greece',
     description:
-      'I am presently employed at IMPACT, INFORMATION SYSTEMS, A.E. as a Frontend Developer within the Invoicing Department. My role involves designing and implementing user interface solutions to enhance invoicing processes and improve user experience.',
+      'I am presently employed at IMPACT, INFORMATION SYSTEMS, A.E. as a Fullstack Developer within the Invoicing Department. My role involves designing and implementing user interface solutions to enhance invoicing processes and improve user experience.',
     icon: LuBuilding,
     date: 'May 2023 – Present'
   }
