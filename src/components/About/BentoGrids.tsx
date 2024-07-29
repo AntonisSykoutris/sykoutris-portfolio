@@ -20,8 +20,8 @@ const gridItems = [
       <Image
         className='transition-all duration-300 ease-out hover:scale-105'
         src={'/about/starWars.webp'}
-        alt={'derr'}
-        objectFit='fill'
+        alt={'star wars image'}
+        objectFit='cover'
         fill
       />
     )
