@@ -19,9 +19,9 @@ const gridItems = [
     background: (
       <Image
         className='transition-all duration-300 ease-out hover:scale-105'
-        src={'/about/test.png'}
+        src={'/about/starWars.webp'}
         alt={'derr'}
-        objectFit='contain'
+        objectFit='fill'
         fill
       />
     )

@@ -28,7 +28,6 @@ import {
   SiWordpress
 } from '@icons-pack/react-simple-icons';
 
-import testImg from '/public/about/test.png';
 import wineImg from '/public/projects/wine.webp';
 import followFinderImg from '/public/projects/followfinder.webp';
 import roomiImg from '/public/projects/roomi.webp';
@@ -304,28 +303,36 @@ export const projectsData = [
       'Framer Motion',
       'Three.js'
     ],
-    imageUrl: wineImg
+    imageUrl: wineImg,
+    github: '',
+    liveLink: 'https://sykoutris-wines.vercel.app'
   },
   {
     title: 'FollowFinder',
     description:
       'I developed a web app that analyzes follower data from JSON inputs, creating a list of mutual followers and identifying who follows you back.',
     tags: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Framer Motion'],
-    imageUrl: followFinderImg
+    imageUrl: followFinderImg,
+    github: '',
+    liveLink: 'https://followfinder.vercel.app/'
   },
   {
     title: 'Roomi',
     description:
       'A landing page for an Escape Room company. The page features immersive visuals and dynamic content to capture the excitement of the escape room experience.',
     tags: ['HTML5', 'SASS', 'JavaScript'],
-    imageUrl: roomiImg
+    imageUrl: roomiImg,
+    github: 'https://github.com/AntonisSykoutris/Roomi',
+    liveLink: 'https://sykou3s-roomi.netlify.app/'
   },
   {
     title: 'Old Portfolio',
     description:
       'My previous portfolio. It includes interactive features that demonstrate my ability to deliver high-quality work across various digital platforms.',
     tags: ['HTML5', 'CSS', 'JavaScript'],
-    imageUrl: oldPortfolioImg
+    imageUrl: oldPortfolioImg,
+    github: 'https://github.com/AntonisSykoutris/portfolio',
+    liveLink: 'https://antonissykoutris.github.io/portfolio/'
   }
 ] as const;
 
@@ -371,3 +378,15 @@ export const experiencesData = [
     date: 'May 2023 – Present'
   }
 ] as const;
+
+export const MAIL_LINK = 'mailto:antonis.sykoutris@protonmail.com';
+
+export const LINKEDIN_PROFILE_LINK =
+  'https://www.linkedin.com/in/antonios-sykoutris-b49ab5264';
+
+export const GITHUB_PROFILE_LINK = 'https://github.com/AntonisSykoutris';
+
+export const FACEBOOK_PROFILE_LINK =
+  'https://www.facebook.com/antwnhs.sikoutris';
+
+export const INSTAGRAM_PROFILE_LINK = 'https://www.instagram.com/sikou3s';
