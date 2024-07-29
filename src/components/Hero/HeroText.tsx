@@ -53,7 +53,7 @@ const HeroText = () => {
           <m.a
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className='rounded-lg bg-background px-4 py-2 text-xl font-bold text-foreground'
+            className='rounded-lg bg-background px-4 py-2 text-lg font-bold text-foreground md:text-xl'
             style={{
               transform: 'translateZ(0)',
               backfaceVisibility: 'hidden',
@@ -67,7 +67,7 @@ const HeroText = () => {
             Download CV
           </m.a>
           <PulsatingButton
-            className='bg-primary text-xl font-bold'
+            className='bg-primary text-lg font-bold md:text-xl'
             pulseColor='#0fba74'
           >
             Contact Me
