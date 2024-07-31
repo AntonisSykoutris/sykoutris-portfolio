@@ -13,10 +13,7 @@ const HeroText = () => {
 
   return (
     <div className='noselect container absolute z-10 mt-10 flex h-fit flex-col items-center justify-center text-primary-foreground'>
-      <motion.div
-        className='flex cursor-default flex-col items-center justify-center text-center text-xl opacity-100 sm:text-3xl md:text-4xl 2xl:text-6xl 3xl:text-7xl'
-        style={{ fontFamily: 'Vermin Vibes, sans-serif' }}
-      >
+      <motion.div className='flex cursor-default flex-col items-center justify-center text-center text-xl opacity-100 sm:text-3xl md:text-4xl 2xl:text-6xl 3xl:text-7xl'>
         <motion.span {...slideInFromLeft()}>Hi, I&#39;m </motion.span>
         <motion.div className='text-primary' {...slideInFromRight()}>
           {name.split('').map((char, index) => {
