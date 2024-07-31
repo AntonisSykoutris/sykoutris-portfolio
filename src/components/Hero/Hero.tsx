@@ -23,7 +23,7 @@ export default function Hero({}: Props) {
           imgPositionY='right'
         />
       </Section>
-      {/* <HeroText /> */}
+      <HeroText />
     </>
   );
 }

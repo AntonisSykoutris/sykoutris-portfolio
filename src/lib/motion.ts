@@ -2,7 +2,7 @@ import { MOTION_SLIDE_DEFAULT_DELAY } from './data';
 
 export function slideInFromLeft(delay = MOTION_SLIDE_DEFAULT_DELAY) {
   return {
-    initial: { x: -100, opacity: 0 },
+    initial: { x: -100, opacity: 0.1 },
     animate: {
       x: 0,
       opacity: 1,
@@ -16,7 +16,7 @@ export function slideInFromLeft(delay = MOTION_SLIDE_DEFAULT_DELAY) {
 
 export function slideInFromTop(delay = MOTION_SLIDE_DEFAULT_DELAY) {
   return {
-    initial: { y: -100, opacity: 0 },
+    initial: { y: -100, opacity: 0.1 },
     animate: {
       y: 0,
       opacity: 1,
