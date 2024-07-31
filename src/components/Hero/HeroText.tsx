@@ -2,35 +2,23 @@
 
 import { motion } from 'framer-motion';
 import PulsatingButton from '../ui/pulsating-button';
+import {
+  slideInFromBottom,
+  slideInFromLeft,
+  slideInFromRight
+} from '@/lib/motion';
 
 const HeroText = () => {
   const name = 'Antonis Sykoutris';
 
   return (
-    <div
-      className='noselect container absolute z-10 mt-10 flex h-fit flex-col items-center justify-center rounded-[50%] text-primary-foreground'
-      id='repulse-div'
-    >
+    <div className='noselect container absolute z-10 mt-10 flex h-fit flex-col items-center justify-center text-primary-foreground'>
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6, type: 'spring' }}
         className='flex cursor-default flex-col items-center justify-center text-center text-xl opacity-100 sm:text-3xl md:text-4xl 2xl:text-6xl 3xl:text-7xl'
         style={{ fontFamily: 'Vermin Vibes, sans-serif' }}
       >
-        <motion.span
-          initial={{ x: -100 }}
-          whileInView={{ x: 0 }}
-          transition={{ duration: 0.6, type: 'spring' }}
-        >
-          Hi, I&#39;m{' '}
-        </motion.span>
-        <motion.div
-          initial={{ x: 100 }}
-          whileInView={{ x: 0 }}
-          transition={{ duration: 0.6, type: 'spring' }}
-          className='text-primary'
-        >
+        <motion.span {...slideInFromLeft()}>Hi, I&#39;m </motion.span>
+        <motion.div className='text-primary' {...slideInFromRight()}>
           {name.split('').map((char, index) => {
             if (char === ' ') {
               return ' ';
@@ -48,7 +36,10 @@ const HeroText = () => {
           👋
         </motion.div>
       </motion.div>
-      <div className='flex justify-between gap-5 pt-10'>
+      <motion.div
+        className='flex justify-between gap-5 pt-10'
+        {...slideInFromBottom()}
+      >
         <motion.a
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -71,7 +62,7 @@ const HeroText = () => {
         >
           Contact Me
         </PulsatingButton>
-      </div>
+      </motion.div>
     </div>
   );
 };
