@@ -34,6 +34,7 @@ export function OrbitingCirclesDemo() {
               color={
                 logo == 'SiMysql' || logo == 'SiDotnet' ? '#62caf3' : 'default'
               }
+              className='h-4 w-4 xl:h-6 xl:w-6 3xl:h-8 3xl:w-8'
             />
           </OrbitingCircles>
         );
@@ -59,6 +60,7 @@ export function OrbitingCirclesDemo() {
                     ? '#b3b3b3'
                     : 'default'
               }
+              className='h-4 w-4 xl:h-6 xl:w-6 3xl:h-8 3xl:w-8'
             />
           </OrbitingCircles>
         );
@@ -79,7 +81,7 @@ export function OrbitingCirclesDemo() {
           >
             <IconComponent
               color={logo == 'SiThreejs' ? '#b3b3b3' : 'default'}
-              className='h-4 w-4'
+              className='h-4 w-4 xl:h-6 xl:w-6 3xl:h-8 3xl:w-8'
             />
           </OrbitingCircles>
         );

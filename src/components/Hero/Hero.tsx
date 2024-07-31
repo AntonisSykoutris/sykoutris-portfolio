@@ -13,7 +13,7 @@ export default function Hero({}: Props) {
     <>
       <Section
         customPaddings='p-0 lg:py-1 lg:py-0'
-        className='bg-dot-black/[0.2] relative z-10 flex h-[100vh] items-center justify-center overflow-hidden align-middle 3xl:h-[80vh]'
+        className='bg-dot-black/[0.2] 4xl:h-[70vh] relative z-10 flex h-[100vh] items-center justify-center overflow-hidden align-middle 3xl:h-[75vh]'
       >
         <ImgToParticles
           img_64={PHOTO_BASE64}
