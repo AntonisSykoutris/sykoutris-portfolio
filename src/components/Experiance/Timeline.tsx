@@ -34,7 +34,7 @@ export default function Timeline() {
                 borderRight: '0.4rem solid #f3f4f6'
               }}
               visible={inView}
-              dateClassName='text-primary'
+              dateClassName='text-primary xl:mx-2'
               date={item.date}
               icon={<item.icon color='default' />}
               iconStyle={{

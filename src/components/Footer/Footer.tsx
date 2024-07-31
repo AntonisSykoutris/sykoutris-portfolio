@@ -10,7 +10,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <section className='mx-auto flex w-[95svw] flex-col items-center md:w-[90svw] xl:w-[60svw]'>
+    <section className='mx-auto flex w-[95svw] flex-col items-center md:w-[90svw] xl:w-[65svw]'>
       <Section className='h-fit'>
         <motion.div className='flex h-full flex-col items-center self-end'>
           <div className='flex w-full flex-col items-center justify-between gap-4 border-b border-t py-6 md:flex-row'>
