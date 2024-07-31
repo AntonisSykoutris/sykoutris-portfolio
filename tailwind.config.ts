@@ -21,13 +21,13 @@ const config = {
       screens: {
         '2xl': '1400px',
         '3xl': '2100px',
-        '4xl': '2600px'
+        '4xl': '2500px'
       }
     },
     extend: {
       screens: {
         '3xl': '2100px',
-        '4xl': '2600px'
+        '4xl': '2500px'
       },
       colors: {
         border: 'hsl(var(--border))',
