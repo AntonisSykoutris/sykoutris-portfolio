@@ -45,6 +45,7 @@ export default function Project({
                   Icon={LuGithub}
                   href={github}
                   className='text-foreground hover:text-primary'
+                  label='Github'
                 />
               ) : (
                 <></>
@@ -53,6 +54,7 @@ export default function Project({
                 Icon={LuExternalLink}
                 href={liveLink}
                 className='text-foreground hover:text-primary'
+                label='External Link'
               />
             </div>
           </div>

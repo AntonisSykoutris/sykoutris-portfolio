@@ -7,12 +7,18 @@ type Props = {
   href?: string;
   Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   className?: string;
+  label: string;
 };
 
-export default function MagneticIcon({ href = '#', Icon, className }: Props) {
+export default function MagneticIcon({
+  href = '#',
+  Icon,
+  className,
+  label
+}: Props) {
   return (
     <MagneticFramer>
-      <a href={href} target='_blank'>
+      <a href={href} target='_blank' aria-label={label}>
         <Icon
           className={cn(
             'h-6 w-6 cursor-pointer text-primary-foreground transition duration-200 ease-in-out hover:text-primary',

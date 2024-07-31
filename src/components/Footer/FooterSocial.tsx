@@ -21,11 +21,23 @@ type Props = {};
 export default function FooterSocial({}: Props) {
   return (
     <>
-      <MagneticIcon Icon={LuGithub} href={GITHUB_PROFILE_LINK} />
-      <MagneticIcon Icon={LuFacebook} href={FACEBOOK_PROFILE_LINK} />
-      <MagneticIcon Icon={LuInstagram} href={INSTAGRAM_PROFILE_LINK} />
-      <MagneticIcon Icon={LuLinkedin} href={LINKEDIN_PROFILE_LINK} />
-      <MagneticIcon Icon={LuMail} href={MAIL_LINK} />
+      <MagneticIcon Icon={LuGithub} href={GITHUB_PROFILE_LINK} label='Github' />
+      <MagneticIcon
+        Icon={LuFacebook}
+        href={FACEBOOK_PROFILE_LINK}
+        label='Facebook'
+      />
+      <MagneticIcon
+        Icon={LuInstagram}
+        href={INSTAGRAM_PROFILE_LINK}
+        label='Instagram'
+      />
+      <MagneticIcon
+        Icon={LuLinkedin}
+        href={LINKEDIN_PROFILE_LINK}
+        label='LinkedIn'
+      />
+      <MagneticIcon Icon={LuMail} href={MAIL_LINK} label='Maik' />
     </>
   );
 }
