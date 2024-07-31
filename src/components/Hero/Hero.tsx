@@ -15,16 +15,16 @@ export default function Hero({}: Props) {
         customPaddings='p-0 lg:py-1 lg:py-0'
         className='bg-dot-black/[0.2] relative z-10 flex h-[100vh] items-center justify-center overflow-hidden align-middle 3xl:h-[80vh]'
       >
-        <ImgToParticles
+        {/* <ImgToParticles
           img_64={PHOTO_BASE64}
           pixelSize={1}
           pixelGap={4}
           imgPositionX='middle'
           imgPositionY='right'
-        />
+        /> */}
+        <h1>tesint</h1>
       </Section>
       <HeroText />
-      {/* <AnimatedTextUnderlign/> */}
     </>
   );
 }
