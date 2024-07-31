@@ -67,7 +67,7 @@ const HeroText = () => {
             Download CV
           </m.a>
           <PulsatingButton
-            className='bg-primary text-lg font-bold md:text-xl'
+            className='bg-[#399a67] text-lg font-bold md:text-xl'
             pulseColor='#0fba74'
           >
             Contact Me
