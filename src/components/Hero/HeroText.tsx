@@ -2,18 +2,16 @@
 
 import { motion } from 'framer-motion';
 import PulsatingButton from '../ui/pulsating-button';
-import {
-  slideInFromBottom,
-  slideInFromLeft,
-  slideInFromRight
-} from '@/lib/motion';
 
 const HeroText = () => {
   const name = 'Antonis Sykoutris';
 
   return (
     <div className='noselect container absolute z-10 mt-10 flex h-fit flex-col items-center justify-center text-primary-foreground'>
-      <div className='flex cursor-default flex-col items-center justify-center text-center text-xl opacity-100 sm:text-3xl md:text-4xl 2xl:text-6xl 3xl:text-7xl'>
+      <div
+        className='flex cursor-default flex-col items-center justify-center text-center text-2xl opacity-100 sm:text-3xl md:text-4xl 2xl:text-6xl 3xl:text-7xl'
+        style={{ fontFamily: 'Vermin Vibes, sans-serif' }}
+      >
         <span>Hi, I&#39;m </span>
         <div className='text-primary'>
           {name.split('').map((char, index) => {

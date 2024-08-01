@@ -11,7 +11,7 @@ type Props = {};
 
 export default function Skills({}: Props) {
   return (
-    <Section leftTopCross rightTopCross className='relative h-fit'>
+    <Section className='relative h-fit'>
       <SectionTitle title='SKILLS' subtitle='WHAT I OFFER' />
       <CanvasRevealEffectDemo2 />
       <div className='grid grid-cols-1 3xl:grid-cols-2'>
