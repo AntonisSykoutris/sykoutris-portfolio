@@ -29,6 +29,7 @@ import {
 } from '@icons-pack/react-simple-icons';
 
 import wineImg from '/public/projects/wine.webp';
+import kasoumisImg from '/public/projects/kasoumis.webp';
 import followFinderImg from '/public/projects/followfinder.webp';
 import roomiImg from '/public/projects/roomi.webp';
 import oldPortfolioImg from '/public/projects/oldPortfolio.webp';
@@ -315,6 +316,15 @@ export const projectsData = [
     imageUrl: followFinderImg,
     github: '',
     liveLink: 'https://followfinder.vercel.app/'
+  },
+  {
+    title: 'Kasoumis Portfolio',
+    description:
+      'I developed a portfolio for Giannis Kasoumis, a Product Manager, to showcase his innovative work and expertise in driving digital solutions.',
+    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Framer Motion'],
+    imageUrl: kasoumisImg,
+    github: '',
+    liveLink: 'https://kasoumis-portfolio.vercel.app/'
   },
   {
     title: 'Roomi',
